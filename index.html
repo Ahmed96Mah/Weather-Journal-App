@@ -5,8 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Journal App</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Weather Journal App</h1>
+    </header>
+    <main>
+        <div class="display felx-row">
+            <div>
+                <i class="fa-solid fa-location-dot fa-style"></i>
+                <p class="hide"></p>
+            </div>
+            <div>
+                <i class="fa-solid fa-temperature-half fa-style"></i>
+                <p class="hide"></p>
+            </div>
+            <div>
+                <i class="fa-solid fa-wind fa-style"></i>
+                <p class="hide"></p>
+            </div>
+            <div>
+                <i class="fa-solid fa-droplet fa-style"></i>
+                <p class="hide"></p>
+            </div>
+        </div>
+        <div class="dataField">
+            <div class="country">
+                <label for="country">Country</label>
+                <select name="country">
+                <option value="">Select a country</option>
+                <option value="us">United States (US)</option>
+                <option value="fr">France (Fr)</option>
+                <option value="de">Germany (Ge)</option>
+                <option value="es">Spain (Sp)</option>
+                <option value="gb">England (GB)</option>
+                <option value="it">Italy (IT)</option>
+                <option value="nl">Netherlands (NL)</option>
+                <option value="pt">Portugal (PT)</option>
+                <option value="th">Thailand (TH)</option>
+                </select>
+            </div>
+            <div class="zipSection">
+                <label for="zip">Zipcode</label>
+                <input type="text" name="zip" placeholder="enter zip code here">
+            </div>
+        </div>
+        <div class="dataField">
+            <div class="feel">
+                <label for="feelings">Today's Feeling</label>
+                <textarea name="feelings" placeholder="How are you feeling today?"></textarea>
+            </div>
+            <button id="generate" type = "submit">Generate</button>
+        </div>
+    </main>
+    <footer>
+        <p>Created By: Ahmed Mahmoud Abdalwahab</p>
+        <div>
+            <i class="fa-brands fa-instagram" id="i"></i>
+            <i class="fa-brands fa-twitter" id="t"></i>
+            <i class="fa-brands fa-facebook-square" id="f"></i>
+            <i class="fa-brands fa-linkedin" id="l"></i>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/421675ef65.js" crossorigin="anonymous"></script>
 </body>
 </html>
