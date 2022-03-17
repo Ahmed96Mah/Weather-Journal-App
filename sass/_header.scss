@@ -1,4 +1,5 @@
 @use 'mixins' as m;
+@use 'variables' as v;
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 
@@ -6,7 +7,7 @@ header {
     height: 15vh;
     margin-bottom: 2rem;
     h1 {
-        color: $hdr-clr;
+        color: v.$hdr-clr;
         font-family: 'Lobster Two', cursive;
         text-align: center;
         font-size: 1.5rem;

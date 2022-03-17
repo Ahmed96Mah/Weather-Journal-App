@@ -167,7 +167,7 @@ main div.display div i.fa-style {
   --fa-beat-fade-scale: 1.25;
 }
 main div.display.extend {
-  padding-bottom: 3rem;
+  padding-bottom: 15rem;
 }
 @media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
   main div.display {

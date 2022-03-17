@@ -1,4 +1,5 @@
 @use 'mixins' as m;
+@use 'variables' as v;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
@@ -6,7 +7,7 @@
 main {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    color: $main-div-clr;
+    color: v.$main-div-clr;
     padding: 1rem;
     min-height: 50vh;
     div {
@@ -44,22 +45,22 @@ main {
                 }
             }
             button {
-                color: $button-txt-clr;
+                color: v.$button-txt-clr;
                 font-weight: bold;
                 padding: 1rem;
                 border-radius: 1rem;
-                background: linear-gradient(100deg, $button-bg-main-clr, $button-bg-secondary-clr);
+                background: linear-gradient(100deg, v.$button-bg-main-clr, v.$button-bg-secondary-clr);
                 border: none;
                 margin-top: 1.2rem;
                 &:hover {
                     cursor: pointer;
-                    color: $button-txt-hover-clr;
-                    background: linear-gradient(200deg, $button-bg-main-clr, $button-bg-secondary-clr);
+                    color: v.$button-txt-hover-clr;
+                    background: linear-gradient(200deg, v.$button-bg-main-clr, v.$button-bg-secondary-clr);
                 }
             }
         }
         &.display {
-            border: 2px solid $display-div-br-clr;
+            border: 2px solid v.$display-div-br-clr;
             border-radius: 1rem;
             height: fit-content;
             padding-bottom: 0.05rem;
@@ -81,7 +82,7 @@ main {
                 }
             }
             &.extend {
-                padding-bottom: 3rem;
+                padding-bottom: 15rem;
             }
         }
     }
