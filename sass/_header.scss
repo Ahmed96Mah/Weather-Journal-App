@@ -1,0 +1,25 @@
+@use 'mixins' as m;
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+header {
+    height: 15vh;
+    margin-bottom: 2rem;
+    h1 {
+        color: $hdr-clr;
+        font-family: 'Lobster Two', cursive;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    @include m.padScreens {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    @include m.laptopScreens {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}

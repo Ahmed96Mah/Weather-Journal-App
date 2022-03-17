@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #5d0092, #0084ac);
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr;
+  grid-area: "hdr" "mn" "ftr";
+  gap: 1.5rem;
+}
+body main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main .display.felx-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body main .display div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body main .dataField {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body main .dataField .country {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+body main .dataField .zipSection {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+body main .dataField .feel {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+body footer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body footer div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  height: 15vh;
+  margin-bottom: 2rem;
+}
+header h1 {
+  color: white;
+  font-family: "Lobster Two", cursive;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+@media only screen and (min-height: 46.8em) and (min-width: 31.25em) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+main {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: wheat;
+  padding: 1rem;
+  min-height: 50vh;
+}
+main div {
+  margin: 0.7rem 0;
+}
+main div.dataField {
+  width: 100%;
+}
+main div.dataField label {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+main div.dataField .country select {
+  padding: 0.25rem;
+  border-radius: 0.7rem;
+  border: none;
+  padding: 0.35rem;
+}
+main div.dataField .zipSection input {
+  padding: 0.25rem;
+  border-radius: 0.7rem;
+  border: none;
+  width: 7.5rem;
+  padding: 0.35rem;
+}
+main div.dataField .feel textarea {
+  padding: 0.25rem;
+  border-radius: 0.7rem;
+  border: none;
+  padding: 0.35rem;
+  height: 2rem;
+  min-height: 1.3rem;
+  max-height: 5rem;
+  width: 45vw;
+  min-width: 30vw;
+  max-width: 55vw;
+}
+main div.dataField button {
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(100deg, #b6b6b6, #b9985a);
+  border: none;
+  margin-top: 1.2rem;
+}
+main div.dataField button:hover {
+  cursor: pointer;
+  color: #5e5e5e;
+  background: linear-gradient(200deg, #b6b6b6, #b9985a);
+}
+main div.display {
+  border: 2px solid wheat;
+  border-radius: 1rem;
+  height: fit-content;
+  padding-bottom: 0.05rem;
+  transition: padding-bottom 0.5s 0.5s ease-in-out;
+  width: 70vw;
+}
+main div.display div {
+  padding: 0.85rem;
+}
+main div.display div.hide {
+  display: none;
+}
+main div.display div .hide {
+  display: none;
+}
+main div.display div i.fa-style {
+  --fa-beat-fade-opacity: 0.1;
+  --fa-beat-fade-scale: 1.25;
+}
+main div.display.extend {
+  padding-bottom: 3rem;
+}
+@media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
+  main div.display {
+    width: 70vw;
+  }
+}
+@media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
+  main div.display {
+    width: 55vw;
+  }
+}
+@media only screen and (min-height: 46.8em) and (min-width: 31.25em) {
+  main {
+    font-size: 1.3rem;
+  }
+  main div.dataField {
+    width: 80%;
+  }
+  main div.dataField button {
+    font-size: 1.1rem;
+  }
+  main div.dataField .zipSection input {
+    font-size: 1.1rem;
+    padding: 0.45rem;
+    width: 10rem;
+  }
+  main div.dataField .country select {
+    padding: 0.45rem;
+    font-size: 1.1rem;
+  }
+  main div.dataField .feel textarea {
+    padding: 0.45rem;
+    font-size: 1.1rem;
+  }
+  main div.display {
+    font-size: 1.2rem;
+    width: 50vw;
+  }
+}
+@media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+  main div.dataField {
+    width: 45%;
+  }
+  main div.dataField .feel textarea {
+    width: 25vw;
+    min-width: 20vw;
+    max-width: 30vw;
+  }
+  main div.display {
+    font-size: 1.2rem;
+    width: 30vw;
+  }
+}
+
+footer {
+  color: wheat;
+  padding: 1rem;
+}
+footer p {
+  font-family: "Lobster Two", cursive;
+  font-size: 1.1rem;
+}
+footer div {
+  width: 80%;
+  margin: 1rem 0;
+}
+footer div i {
+  cursor: pointer;
+  font-size: 2.2rem;
+}
+@media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
+  footer div {
+    max-width: 45%;
+  }
+}
+@media only screen and (min-height: 46.8em) and (min-width: 31.25em) {
+  footer div {
+    max-width: 50%;
+  }
+}
+@media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
+  footer {
+    min-height: 30vh;
+  }
+}
+@media only screen and (min-height: 46.8em) and (min-width: 31.25em) {
+  footer {
+    min-height: 30vh;
+  }
+  footer p {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+  footer p {
+    font-size: 1.5rem;
+  }
+  footer div {
+    width: 35%;
+  }
+  footer div i {
+    font-size: 2.5rem;
+  }
+}

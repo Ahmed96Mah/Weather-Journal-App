@@ -1,0 +1,37 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, v.$pg-main-clr, v.$pg-secondary-clr);
+    @include m.displayGrid(3, 1fr, "hdr" "mn" "ftr");
+    main {
+        @include m.displayFlex(column, nowrap, center, center);
+        .display {
+            &.felx-row {
+                @include m.displayFlex(row, nowrap, space-around, center);
+            }
+            div {
+                @include m.displayFlex(row, nowrap, space-around, center);
+            }
+        }
+        .dataField {
+            @include m.displayFlex(row, nowrap, space-around, center);
+            .country {
+                @include m.displayFlex(column, nowrap, center, stretch);
+            }
+            .zipSection {
+                @include m.displayFlex(column, nowrap, center, stretch);
+            }
+            .feel {
+                @include m.displayFlex(column, nowrap, center, stretch);
+            }
+        }
+    }
+    footer {
+        @include m.displayFlex(column, nowrap, center, center);
+        div {
+            @include m.displayFlex(row, nowrap, space-between, center);
+        }
+    }
+}

@@ -1,0 +1,154 @@
+@use 'mixins' as m;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+main {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: $main-div-clr;
+    padding: 1rem;
+    min-height: 50vh;
+    div {
+        margin: 0.7rem 0;
+        &.dataField {
+            width: 100%;
+            label {
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 0.6rem;
+            }
+            .country {
+                select {
+                    @include m.inputArea(0.25rem, 0.7rem, none);
+                    padding: 0.35rem;
+                }
+            }
+            .zipSection {
+                input {
+                    @include m.inputArea(0.25rem, 0.7rem, none);
+                    width: 7.5rem;
+                    padding: 0.35rem;
+                }
+            }
+            .feel {
+                textarea {
+                    @include m.inputArea(0.25rem, 0.7rem, none);
+                    padding: 0.35rem;
+                    height: 2rem;
+                    min-height: 1.3rem;
+                    max-height: 5rem;
+                    width: 45vw;
+                    min-width: 30vw;
+                    max-width: 55vw;
+                }
+            }
+            button {
+                color: $button-txt-clr;
+                font-weight: bold;
+                padding: 1rem;
+                border-radius: 1rem;
+                background: linear-gradient(100deg, $button-bg-main-clr, $button-bg-secondary-clr);
+                border: none;
+                margin-top: 1.2rem;
+                &:hover {
+                    cursor: pointer;
+                    color: $button-txt-hover-clr;
+                    background: linear-gradient(200deg, $button-bg-main-clr, $button-bg-secondary-clr);
+                }
+            }
+        }
+        &.display {
+            border: 2px solid $display-div-br-clr;
+            border-radius: 1rem;
+            height: fit-content;
+            padding-bottom: 0.05rem;
+            transition: padding-bottom 0.5s 0.5s ease-in-out;
+            width: 70vw;
+            div {
+                padding: 0.85rem;
+                &.hide{
+                    display: none;
+                }
+                .hide{
+                    display: none;
+                }
+                i {
+                    &.fa-style {
+                        --fa-beat-fade-opacity: 0.1;
+                         --fa-beat-fade-scale: 1.25;
+                    }
+                }
+            }
+            &.extend {
+                padding-bottom: 3rem;
+            }
+        }
+    }
+    @include m.tallMobileScreens {
+        div {
+            &.display {
+                width: 70vw;
+            }
+        }
+    }
+    @include m.flippedMobileScreens {
+        div {
+            &.display {
+                width: 55vw;
+            }
+        }
+    }
+    @include m.padScreens {
+        font-size: 1.3rem;
+        div {
+            &.dataField {
+                width: 80%;
+                button {
+                    font-size: 1.1rem;
+                }
+                .zipSection {
+                    input {
+                        font-size: 1.1rem;
+                        padding: 0.45rem;
+                        width: 10rem;
+                    }
+                }
+                .country {
+                    select {
+                        padding: 0.45rem;
+                        font-size: 1.1rem;
+                    }
+                }
+                .feel {
+                    textarea {
+                        padding: 0.45rem;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+            &.display {
+                font-size: 1.2rem;
+                width: 50vw;
+            }
+        }
+    }
+    @include m.laptopScreens {
+        div {
+            &.dataField {
+                width: 45%;
+                .feel {
+                    textarea {
+                        width: 25vw;
+                        min-width: 20vw;
+                        max-width: 30vw;
+                    }
+                }
+            }
+            &.display {
+                font-size: 1.2rem;
+                width: 30vw;
+            }
+        }
+    }
+}
