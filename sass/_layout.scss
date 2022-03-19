@@ -12,7 +12,7 @@ body {
                 @include m.displayFlex(row, nowrap, space-around, center);
             }
             div {
-                @include m.displayFlex(row, nowrap, space-around, center);
+                @include m.displayFlex(row, nowrap, space-evenly, center);
             }
         }
         .dataField {

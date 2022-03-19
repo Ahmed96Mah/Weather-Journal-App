@@ -26,7 +26,7 @@ body main .display.felx-row {
 body main .display div {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 body main .dataField {
@@ -76,9 +76,11 @@ header h1 {
   text-align: center;
   font-size: 1.5rem;
   padding: 1rem;
+  margin-top: 2.3rem;
 }
 @media only screen and (min-height: 46.8em) and (min-width: 31.25em) {
   header h1 {
+    margin-top: 7rem;
     font-size: 2rem;
   }
 }
@@ -110,14 +112,16 @@ main div.dataField .country select {
   padding: 0.25rem;
   border-radius: 0.7rem;
   border: none;
-  padding: 0.35rem;
+  padding: 0.5rem;
+  /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
 }
 main div.dataField .zipSection input {
   padding: 0.25rem;
   border-radius: 0.7rem;
   border: none;
   width: 7.5rem;
-  padding: 0.35rem;
+  padding: 0.5rem;
+  /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
 }
 main div.dataField .feel textarea {
   padding: 0.25rem;
@@ -130,6 +134,7 @@ main div.dataField .feel textarea {
   width: 45vw;
   min-width: 30vw;
   max-width: 55vw;
+  /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
 }
 main div.dataField button {
   color: white;
@@ -139,6 +144,7 @@ main div.dataField button {
   background: linear-gradient(100deg, #b6b6b6, #b9985a);
   border: none;
   margin-top: 1.2rem;
+  /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
 }
 main div.dataField button:hover {
   cursor: pointer;
@@ -150,14 +156,19 @@ main div.display {
   border-radius: 1rem;
   height: fit-content;
   padding-bottom: 0.05rem;
-  transition: padding-bottom 0.5s 0.5s ease-in-out;
+  transition: padding-bottom 1s ease-in;
   width: 70vw;
+  box-shadow: 1px 4px 4px rgba(192, 192, 192, 0.548);
 }
 main div.display div {
   padding: 0.85rem;
 }
 main div.display div.hide {
   display: none;
+}
+main div.display div.limitWidth {
+  width: 75%;
+  padding-left: 1.5rem;
 }
 main div.display div .hide {
   display: none;
@@ -167,9 +178,12 @@ main div.display div i.fa-style {
   --fa-beat-fade-scale: 1.25;
 }
 main div.display.extend {
-  padding-bottom: 15rem;
+  padding-bottom: 25.15rem;
 }
 @media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
+  main {
+    min-height: 40vh;
+  }
   main div.display {
     width: 70vw;
   }
@@ -182,6 +196,7 @@ main div.display.extend {
 @media only screen and (min-height: 46.8em) and (min-width: 31.25em) {
   main {
     font-size: 1.3rem;
+    min-height: 45vh;
   }
   main div.dataField {
     width: 80%;
@@ -237,6 +252,11 @@ footer div {
 footer div i {
   cursor: pointer;
   font-size: 2.2rem;
+  color: wheat;
+}
+footer div i.fa-style {
+  --fa-beat-fade-opacity: 0.1;
+  --fa-beat-fade-scale: 1.25;
 }
 @media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
   footer div {
