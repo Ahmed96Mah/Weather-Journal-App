@@ -4,6 +4,12 @@
 
 **Responsive** Weather Journal Application that accepts the user inputs and uses it to contact the **Open Weather Map API** to retreive the current weather data and the location corresponding to the zipcode entered by the user and then display that data to the user.
 
+### Project Notes:
+
+**Important Note** The openWeather Map API key included in the porject has been deactivated. So, to be able to use the 
+application you have to create an account on the 'openweathermap.org' site. <br>
+Then, subscribe to the **'current weather and forecast'** service with a **free plan**. After that, generate your key and replace the deactivated key (located in the app.js 'line3') with yours.
+
 ### Project's details:
 
 1- Inputs: <br>
@@ -40,4 +46,4 @@ To test the project, you could use one of the following methods:
     server itself. To acheive this, you need to do the following: <br>
     - First, you need to change the path of both the GET and POST requests inside the app.js file. <br>
     - The path should be changed to 'http://yourIPv4Address:8000/getdata(or /savedata)' on lines 45 & 141 based on the type of the method. <br>
-    - Then, when you run the command **node server.js** in the terminal and run the live-server the app.js will be instructed to post and fetch data from the 8000 port which is conntected to our local server.
+    - Then, when you run the command **node server.js** in the terminal and run the live-server the app.js will be instructed to post and fetch data from the 8000 port which is conntected to our local server. <br>
