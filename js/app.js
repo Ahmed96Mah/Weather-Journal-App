@@ -61,6 +61,8 @@ const getAndUpdate = async () =>{
 const displayAnimation = () => {
     const display = document.querySelector('.display');
     const divList = display.querySelectorAll('div');
+    const selectElement = document.querySelector('select');
+    const inputElement = document.querySelector('input');
     
     if (!divList[0].querySelector('i').classList.contains('fa-beat-fade')){
         for (const div of divList){
@@ -79,9 +81,13 @@ const displayAnimation = () => {
         for (const div of divList){
             div.querySelector('i').classList.toggle('fa-beat-fade');
         }
-        // Determine if this is the 1st iteration of the application
-        if (display.classList.contains('felx-row')) {
-            extndDisplay();
+        if((!selectElement.value==='') && (!inputElement.value==='')){
+            // Determine if this is the 1st iteration of the application
+            if (display.classList.contains('felx-row')) {
+                extndDisplay(); // Only Extend display div @ 1st iteration
+            }
+        }else {
+            alert('Please make sure to select a country & Enter a zipcode!');
         }
     }
 }
