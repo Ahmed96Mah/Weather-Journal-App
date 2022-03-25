@@ -23,7 +23,6 @@ main {
                 select {
                     @include m.inputArea(0.25rem, 0.7rem, none);
                     padding: 0.5rem;
-                    /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
                 }
             }
             .zipSection {
@@ -31,7 +30,6 @@ main {
                     @include m.inputArea(0.25rem, 0.7rem, none);
                     width: 7.5rem;
                     padding: 0.5rem;
-                    /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
                 }
             }
             .feel {
@@ -44,7 +42,6 @@ main {
                     width: 45vw;
                     min-width: 30vw;
                     max-width: 55vw;
-                    /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
                 }
             }
             button {
@@ -55,7 +52,6 @@ main {
                 background: linear-gradient(100deg, v.$button-bg-main-clr, v.$button-bg-secondary-clr);
                 border: none;
                 margin-top: 1.2rem;
-                /*box-shadow: 1px 3px 3px rgba(192, 192, 192, 0.548);*/
                 &:hover {
                     cursor: pointer;
                     color: v.$button-txt-hover-clr;
@@ -66,13 +62,13 @@ main {
         &.display {
             border: 2px solid v.$display-div-br-clr;
             border-radius: 1rem;
-            height: fit-content;
-            padding-bottom: 0.05rem;
-            transition: padding-bottom 1s ease-in;
+            height: 30rem;
+            max-height: 4rem;
+            transition: max-height 1s ease-in-out;
             width: 70vw;
             box-shadow: 1px 4px 4px rgba(192, 192, 192, 0.548);
             div {
-                padding: 0.85rem;
+                padding-top: 0.85rem;
                 &.hide{
                     display: none;
                 }
@@ -91,61 +87,54 @@ main {
                 }
             }
             &.extend {
-                padding-bottom: 25.15rem;
+                max-height: 30rem;
             }
         }
     }
-    @include m.tallMobileScreens {
+
+    /* Media Queries */
+    @include m.tallMobileScreens(47.8em, 31.25em) { /* ($mn-hgt, $mx-wdth) */
         min-height: 40vh;
         div {
             &.display {
-                width: 70vw;
+                @include m.displayStyle(70vw, 30rem, 4rem, 30rem);
             }
         }
     }
-    @include m.flippedMobileScreens {
-        div {
-            &.display {
-                width: 55vw;
-            }
-        }
-    }
-    @include m.padScreens {
-        font-size: 1.3rem;
-        min-height: 45vh;
+    @include m.tallMobileScreens(37.5em, 20.625em) { /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
         div {
             &.dataField {
-                width: 80%;
-                button {
-                    font-size: 1.1rem;
-                }
-                .zipSection {
-                    input {
-                        font-size: 1.1rem;
-                        padding: 0.45rem;
-                        width: 10rem;
-                    }
-                }
-                .country {
-                    select {
-                        padding: 0.45rem;
-                        font-size: 1.1rem;
-                    }
-                }
                 .feel {
                     textarea {
-                        padding: 0.45rem;
-                        font-size: 1.1rem;
+                        width: 55vw;
+                        max-width: 70vw;
                     }
                 }
             }
             &.display {
-                font-size: 1.2rem;
-                width: 50vw;
+                @include m.displayStyle(85vw, 30.5rem, 4rem, 30.5rem);
+                div {
+                    &.limitWidth {
+                        width: 80%;
+                    }
+                }
             }
         }
     }
-    @include m.laptopScreens {
+    @include m.flippedMobileScreens(31.25em, 28.125em) { /* ($mn-wdth, $mx-hgt) */
+        div {
+            &.display {
+                @include m.displayStyle(55vw, 30rem, 4rem, 30rem);
+            }
+        }
+    }
+    @include m.padScreens(60em, 87em, 45em, 64em) { /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
+        @include m.padStyles(1.3rem, 45vh, 80%, 10rem, 0.45rem, 1.1rem, 50vw, 34rem, 4.5rem, 34rem);
+    }
+    @include m.flippedPadScreens(64em, 87em, 48em) { /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
+        @include m.padStyles(1.3rem, 55vh, 80%, 10rem, 0.45rem, 1.1rem, 40vw, 34rem, 4.5rem, 34rem);
+    }
+    @include m.laptopScreens(40.75em, 59.375em) { /* ($mx-hgt, $mn-wdth) */
         div {
             &.dataField {
                 width: 45%;
@@ -158,8 +147,13 @@ main {
                 }
             }
             &.display {
+                @include m.displayStyle(30vw, 34rem, 4.5rem, 34rem);
                 font-size: 1.2rem;
-                width: 30vw;
+                div {
+                    &.limitWidth {
+                        width: 85%;
+                    }
+                }
             }
         }
     }

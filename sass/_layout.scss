@@ -9,7 +9,7 @@ body {
         @include m.displayFlex(column, nowrap, center, center);
         .display {
             &.felx-row {
-                @include m.displayFlex(row, nowrap, space-around, center);
+                @include m.displayFlex(row, nowrap, space-around, flex-start);
             }
             div {
                 @include m.displayFlex(row, nowrap, space-evenly, center);
@@ -25,6 +25,10 @@ body {
             }
             .feel {
                 @include m.displayFlex(column, nowrap, center, stretch);
+            }
+            /* Media Queries */
+            @include m.tallMobileScreens(37.5em, 20.625em) { /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
+                @include m.displayFlex(row, wrap, space-around, center);
             }
         }
     }

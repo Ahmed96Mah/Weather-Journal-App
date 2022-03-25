@@ -21,23 +21,36 @@ footer {
                  --fa-beat-fade-scale: 1.25;
             }
         }
-        @include m.flippedMobileScreens {
+    }
+
+    /* Media Queries */
+    @include m.tallMobileScreens(47.8em, 31.25em) { /* ($mn-hgt, $mx-wdth) */
+        min-height: 30vh;
+    }
+    @include m.flippedMobileScreens(31.25em, 28.125em) { /* ($mn-wdth, $mx-hgt) */
+        div {
             max-width: 45%;
         }
-        @include m.padScreens {
-            max-width: 50%;
-        }
     }
-    @include m.tallMobileScreens {
-        min-height: 30vh;
-    }
-    @include m.padScreens {
+    @include m.padScreens(60em, 87em, 45em, 64em) { /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
         min-height: 30vh;
         p {
-            font-size: 1.7rem;
+            font-size: 2rem;
+        }
+        div {
+            max-width: 55%;
         }
     }
-    @include m.laptopScreens {
+    @include m.flippedPadScreens(64em, 87em, 48em) { /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
+        min-height: 30vh;
+        p {
+            font-size: 2rem;
+        }
+        div {
+            max-width: 40%;
+        }
+    }
+    @include m.laptopScreens(40.75em, 59.375em) { /* ($mx-hgt, $mn-wdth) */
         p {
             font-size: 1.5rem;
         }

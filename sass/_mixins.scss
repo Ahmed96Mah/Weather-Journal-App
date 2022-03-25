@@ -19,26 +19,83 @@
     border: $border-type;
 }
 
-@mixin tallMobileScreens {
-    @media only screen and (min-height: 47.8em) and (max-width: 31.25em){
+@mixin displayStyle($display-width, $display-height, $display-max-height, $extend-max-height) {
+    width: $display-width;
+    height: $display-height;
+    max-height: $display-max-height;
+    &.extend {
+        max-height: $extend-max-height;
+    }
+}
+
+@mixin padStyles($fnt, $min-hght, $dtFld-wdth, $in-wdth, $fld-pad, $fld-fnt, $ds-w, $ds-h, $ds-mx-h, $ext-mx-w) {
+    font-size: $fnt;
+    min-height: $min-hght;
+    div {
+        &.dataField {
+            width: $dtFld-wdth;
+            button {
+                font-size: $fld-fnt;
+            }
+            .zipSection {
+                input {
+                    padding: $fld-pad;
+                    font-size: $fld-fnt;
+                    width: $in-wdth;
+                }
+            }
+            .country {
+                select {
+                    padding: $fld-pad;
+                    font-size: $fld-fnt;
+                }
+            }
+            .feel {
+                textarea {
+                    padding: $fld-pad;
+                    font-size: $fld-fnt;
+                }
+            }
+        }
+        &.display {
+            @include displayStyle($ds-w, $ds-h, $ds-mx-h, $ext-mx-w);
+            font-size: $fld-fnt + 0.1rem;
+            div {
+                &.limitWidth {
+                    width: $dtFld-wdth + 5%;
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries */
+@mixin tallMobileScreens($mn-hgt, $mx-wdth) {
+    @media only screen and (min-height: $mn-hgt) and (max-width: $mx-wdth) {
         @content;
     }    
 }
 
-@mixin flippedMobileScreens {
-    @media only screen and (min-width:31.25em) and (max-height:28.125em) {
+@mixin flippedMobileScreens($mn-wdth, $mx-hgt) {
+    @media only screen and (min-width: $mn-wdth) and (max-height: $mx-hgt) {
         @content;
     }    
 }
 
-@mixin padScreens {
-    @media only screen and (min-height: 46.8em) and (min-width: 31.25em){
+@mixin padScreens ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) {
+    @media only screen and (min-height: $mn-hgt) and (max-height: $mx-hgt) and (min-width: $mn-wdth) and (max-width: $mx-wdth) {
         @content;
     }    
 }
 
-@mixin laptopScreens {
-    @media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+@mixin flippedPadScreens($mn-wdth, $max-wdth, $mn-hgt) {
+    @media only screen and (min-width: $mn-wdth) and (max-width: $max-wdth) and (min-height: $mn-hgt) {
+        @content;
+    }    
+}
+
+@mixin laptopScreens($mx-hgt, $mn-wdth) {
+    @media only screen and (max-height: $mx-hgt) and (min-width: $mn-wdth) {
         @content;
     }
 }

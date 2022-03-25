@@ -14,13 +14,21 @@ header {
         padding: 1rem;
         margin-top: 2.3rem;
     }
-    @include m.padScreens {
+
+    /* Media Queries */
+    @include m.padScreens(60em, 87em, 45em, 64em) { /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
         h1 {
             margin-top: 7rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
     }
-    @include m.laptopScreens {
+    @include m.flippedPadScreens(64em, 87em, 48em) { /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
+        h1 {
+            margin-top: 7rem;
+            font-size: 2.5rem;
+        }
+    }
+    @include m.laptopScreens(40.75em, 59.375em) { /* ($mx-hgt, $mn-wdth) */
         h1 {
             font-size: 2rem;
         }
