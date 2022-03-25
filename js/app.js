@@ -76,12 +76,11 @@ const displayAnimation = () => {
             // Set a lower delay AFTER the 1st iteration
             setTimeout(displayAnimation, 1000);
         }
-        
     }else {
         for (const div of divList){
             div.querySelector('i').classList.toggle('fa-beat-fade');
         }
-        if((!selectElement.value==='') && (!inputElement.value==='')){
+        if((!(selectElement.value==='')) && (!(inputElement.value===''))){
             // Determine if this is the 1st iteration of the application
             if (display.classList.contains('felx-row')) {
                 extndDisplay(); // Only Extend display div @ 1st iteration
@@ -95,11 +94,11 @@ const displayAnimation = () => {
 // Extend the display data div
 const extndDisplay = () => {
     const display = document.querySelector('.display');
+    
     if (!display.classList.contains('extend')) {
         display.classList.toggle('extend');
         setTimeout(extndDisplay, 2000);
     }else {
-        display.classList.toggle('extend');
         ChangeLayout();
     }
 }
@@ -109,18 +108,14 @@ const ChangeLayout = () => {
     const display = document.querySelector('.display');
     const divList = display.querySelectorAll('div');
     
-    if (!divList[0].classList.contains('hide')) {
-        for (const div of divList){
-            div.classList.toggle('hide');
-        }
-        setTimeout(ChangeLayout,0);
-    }else {
-        display.classList.toggle('felx-row');
-        for (const div of divList){
-            div.querySelector('p').classList.toggle('hide');
-            div.classList.toggle('hide');
-            div.classList.toggle('limitWidth');
-        }
+    for (const div of divList){
+        div.classList.toggle('hide');
+    }
+    display.classList.toggle('felx-row');
+    for (const div of divList){
+        div.querySelector('p').classList.toggle('hide');
+        div.classList.toggle('hide');
+        div.classList.toggle('limitWidth');
     }
 }
 
@@ -161,7 +156,7 @@ function init(){
             })
         }
     }
-
+    // Defining The social animation listener Callback
     function socialAnimation (evt){
         if((evt.target.nodeName === 'I') && evt.target.classList.contains('fa-brands')){
             evt.target.classList.toggle('fa-beat-fade');
