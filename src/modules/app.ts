@@ -4,7 +4,7 @@ import { displayAnimation } from './animation.js';
 
 /* Global Variables */
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = `&appid=66b54eb14f7a27fafbb9773c230b063c&units=imperial`;
+const apiKey = `&appid=<Your-API-Key-Here>&units=imperial`;
 
 // Define the POST Async function
 const postData = async (url: string = '', data: object = {}): Promise<void> => {
