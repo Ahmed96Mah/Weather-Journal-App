@@ -1,86 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Journal App</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
     <header>
-        <h1>Weather Journal App</h1>
+      <h1>Weather Journal App</h1>
     </header>
     <main>
-        <div class="display felx-row">
-            <div>
-                <i class="fa-solid fa-location-dot fa-style"></i>
-                <p id="cityLoc" class="hide"></p>
-            </div>
-            <div>
-                <i class="fa-solid fa-calendar-days fa-style"></i>
-                <p id="date" class="hide"></p>
-            </div>
-            <div>
-                <i class="fa-solid fa-temperature-half fa-style"></i>
-                <p id="temp" class="hide"></p>
-            </div>
-            <div>
-                <i class="fa-solid fa-wind fa-style"></i>
-                <p id="windSpeed" class="hide"></p>
-            </div>
-            <div>
-                <i class="fa-solid fa-droplet fa-style"></i>
-                <p id="humidity" class="hide"></p>
-            </div>
-            <div>
-                <i class="fa-solid fa-user fa-style"></i>
-                <p id="content" class="hide"></p>
-            </div>
+      <div class="display felx-row">
+        <div>
+          <i class="fa-solid fa-location-dot fa-style"></i>
+          <p id="cityLoc" class="hide"></p>
         </div>
-        <div class="dataField">
-            <div class="country">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                <option value="">Select a country</option>
-                <option value="us">United States (US)</option>
-                <option value="fr">France (Fr)</option>
-                <option value="de">Germany (Ge)</option>
-                <option value="es">Spain (Sp)</option>
-                <option value="gb">England (GB)</option>
-                <option value="it">Italy (IT)</option>
-                <option value="nl">Netherlands (NL)</option>
-                <option value="pt">Portugal (PT)</option>
-                <option value="th">Thailand (TH)</option>
-                </select>
-            </div>
-            <div class="zipSection">
-                <label for="zip">Zipcode</label>
-                <input id="zipcode" type="text" name="zip" placeholder="enter zip code here">
-            </div>
+        <div>
+          <i class="fa-solid fa-calendar-days fa-style"></i>
+          <p id="date" class="hide"></p>
         </div>
-        <div class="dataField">
-            <div class="feel">
-                <label for="feelings">Today's Feeling</label>
-                <textarea id="feelings" name="feelings" placeholder="How are you feeling today?"></textarea>
-            </div>
-            <button id="generate" type = "submit">Generate</button>
+        <div>
+          <i class="fa-solid fa-temperature-half fa-style"></i>
+          <p id="temp" class="hide"></p>
         </div>
+        <div>
+          <i class="fa-solid fa-wind fa-style"></i>
+          <p id="windSpeed" class="hide"></p>
+        </div>
+        <div>
+          <i class="fa-solid fa-droplet fa-style"></i>
+          <p id="humidity" class="hide"></p>
+        </div>
+        <div>
+          <i class="fa-solid fa-user fa-style"></i>
+          <p id="content" class="hide"></p>
+        </div>
+      </div>
+      <div class="dataField">
+        <div class="country">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">Select a country</option>
+            <option value="us">United States (US)</option>
+            <option value="fr">France (Fr)</option>
+            <option value="de">Germany (Ge)</option>
+            <option value="es">Spain (Sp)</option>
+            <option value="gb">England (GB)</option>
+            <option value="it">Italy (IT)</option>
+            <option value="nl">Netherlands (NL)</option>
+            <option value="pt">Portugal (PT)</option>
+            <option value="th">Thailand (TH)</option>
+          </select>
+        </div>
+        <div class="zipSection">
+          <label for="zip">Zipcode</label>
+          <input
+            id="zipcode"
+            type="text"
+            name="zip"
+            placeholder="enter zip code here"
+          />
+        </div>
+      </div>
+      <div class="dataField">
+        <div class="feel">
+          <label for="feelings">Today's Feeling</label>
+          <textarea
+            id="feelings"
+            name="feelings"
+            placeholder="How are you feeling today?"
+          ></textarea>
+        </div>
+        <button id="generate" type="submit">Generate</button>
+      </div>
     </main>
     <footer>
-        <p>Created By: Ahmed Mahmoud Abdalwahab</p>
-        <div>
-            <a href=""><i class="fa-brands fa-instagram" id="i"></i></a>
-            <a href=""><i class="fa-brands fa-twitter" id="t"></i></a>
-            <a href="https://web.facebook.com/profile.php?id=100004092701358" target="_blank">
-                <i class="fa-brands fa-facebook-square" id="f"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ahmed-abd-al-wahab-b177a1140/" target="_blank">
-                <i class="fa-brands fa-linkedin" id="l"></i>
-            </a>
-        </div>
+      <p>Created By: Ahmed Mahmoud Abdalwahab</p>
+      <div>
+        <a href=""><i class="fa-brands fa-instagram" id="i"></i></a>
+        <a href=""><i class="fa-brands fa-twitter" id="t"></i></a>
+        <a
+          href="https://web.facebook.com/profile.php?id=100004092701358"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook-square" id="f"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ahmed-abd-al-wahab-b177a1140/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin" id="l"></i>
+        </a>
+      </div>
     </footer>
-    <script src="https://kit.fontawesome.com/421675ef65.js" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/421675ef65.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./dist/modules/app.js"></script>
+  </body>
 </html>
