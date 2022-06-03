@@ -3,7 +3,7 @@ import { getAndUpdate } from './update.js';
 import { displayAnimation } from './animation.js';
 /* API URL */
 export const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-export const apiKey = `&appid=<Your-API-Goes-HERE>&units=imperial`;
+export const apiKey = `&appid=<Your-API-Key-Goes-HERE>&units=imperial`;
 // Define the POST Async function
 const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
