@@ -2,40 +2,51 @@
 @use 'variables' as v;
 
 body {
-    margin: 0;
-    background: linear-gradient(135deg, v.$pg-main-clr, v.$pg-secondary-clr);
-    @include m.displayGrid(3, 1fr, "hdr" "mn" "ftr");
-    main {
-        @include m.displayFlex(column, nowrap, center, center);
-        .display {
-            &.felx-row {
-                @include m.displayFlex(row, nowrap, space-around, flex-start);
-            }
-            div {
-                @include m.displayFlex(row, nowrap, space-evenly, center);
-            }
-        }
-        .dataField {
-            @include m.displayFlex(row, nowrap, space-around, center);
-            .country {
-                @include m.displayFlex(column, nowrap, center, stretch);
-            }
-            .zipSection {
-                @include m.displayFlex(column, nowrap, center, stretch);
-            }
-            .feel {
-                @include m.displayFlex(column, nowrap, center, stretch);
-            }
-            /* Media Queries */
-            @include m.tallMobileScreens(37.5em, 20.625em) { /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
-                @include m.displayFlex(row, wrap, space-around, center);
-            }
-        }
-    }
-    footer {
-        @include m.displayFlex(column, nowrap, center, center);
+  margin: 0;
+  @include m.displayGrid(3, 1fr, 'hdr' 'mn' 'ftr');
+  header {
+    @include m.displayFlex(column, nowrap, center, center);
+  }
+  main {
+    @include m.displayFlex(column, nowrap, center, center);
+    .display {
+      @include m.displayFlex(column, nowrap, center, center);
+      .section {
+        @include m.displayFlex(row, wrap, space-around, center);
         div {
-            @include m.displayFlex(row, nowrap, space-between, center);
+          @include m.displayFlex(row, wrap, space-between, center);
+          .data {
+            @include m.displayFlex(column, nowrap, center, center);
+          }
         }
+      }
     }
+    .dataField {
+      @include m.displayFlex(column, nowrap, center, stretch);
+      #field1 {
+        @include m.displayFlex(row, wrap, space-around, center);
+        .country {
+          @include m.displayFlex(column, nowrap, center, stretch);
+        }
+        .zipSection {
+          @include m.displayFlex(column, nowrap, center, stretch);
+        }
+        .feel {
+          @include m.displayFlex(column, nowrap, center, stretch);
+        }
+      }
+      #field2 {
+        @include m.displayFlex(column, nowrap, center, center);
+      }
+    }
+  }
+  footer {
+    @include m.displayFlex(column, nowrap, center, center);
+    div {
+      @include m.displayFlex(row, nowrap, space-between, center);
+      &#author {
+        @include m.displayFlex(column, nowrap, center, center);
+      }
+    }
+  }
 }

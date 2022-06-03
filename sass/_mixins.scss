@@ -1,101 +1,102 @@
 @mixin displayGrid($numOfRows, $numOfColumns, $area) {
-    display: grid;
-    grid-template-rows: repeat($numOfRows, auto);
-    grid-template-columns: $numOfColumns;
-    grid-area: $area;
-    gap: 1.5rem;
+  display: grid;
+  grid-template-rows: repeat($numOfRows, auto);
+  grid-template-columns: $numOfColumns;
+  grid-area: $area;
+  gap: 1.5rem;
 }
 
 @mixin displayFlex($flex-direc, $wrap, $justify, $align) {
-    display: flex;
-    flex-flow: $flex-direc $wrap;
-    justify-content: $justify;
-    align-items: $align;
+  display: flex;
+  flex-flow: $flex-direc $wrap;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin inputArea($padding, $border-radius, $border-type) {
-    padding: $padding;
-    border-radius: $border-radius;
-    border: $border-type;
+  padding: $padding;
+  border-radius: $border-radius;
+  border: $border-type;
 }
 
-@mixin displayStyle($display-width, $display-height, $display-max-height, $extend-max-height) {
-    width: $display-width;
-    height: $display-height;
-    max-height: $display-max-height;
-    &.extend {
-        max-height: $extend-max-height;
-    }
-}
-
-@mixin padStyles($fnt, $min-hght, $dtFld-wdth, $in-wdth, $fld-pad, $fld-fnt, $ds-w, $ds-h, $ds-mx-h, $ext-mx-w) {
-    font-size: $fnt;
-    min-height: $min-hght;
-    div {
-        &.dataField {
-            width: $dtFld-wdth;
-            button {
-                font-size: $fld-fnt;
-            }
-            .zipSection {
-                input {
-                    padding: $fld-pad;
-                    font-size: $fld-fnt;
-                    width: $in-wdth;
-                }
-            }
-            .country {
-                select {
-                    padding: $fld-pad;
-                    font-size: $fld-fnt;
-                }
-            }
-            .feel {
-                textarea {
-                    padding: $fld-pad;
-                    font-size: $fld-fnt;
-                }
-            }
+@mixin padStyles(
+  $fnt,
+  $min-hght,
+  $dtFld-wdth,
+  $in-wdth,
+  $fld-pad,
+  $fld-fnt,
+  $ds-w,
+  $ds-h,
+  $ds-mx-h,
+  $ext-mx-w
+) {
+  font-size: $fnt;
+  min-height: $min-hght;
+  div {
+    &.dataField {
+      width: $dtFld-wdth;
+      button {
+        font-size: $fld-fnt;
+      }
+      .zipSection {
+        input {
+          padding: $fld-pad;
+          font-size: $fld-fnt;
+          width: $in-wdth;
         }
-        &.display {
-            @include displayStyle($ds-w, $ds-h, $ds-mx-h, $ext-mx-w);
-            font-size: $fld-fnt + 0.1rem;
-            div {
-                &.limitWidth {
-                    width: $dtFld-wdth + 5%;
-                }
-            }
+      }
+      .country {
+        select {
+          padding: $fld-pad;
+          font-size: $fld-fnt;
         }
+      }
+      .feel {
+        textarea {
+          padding: $fld-pad;
+          font-size: $fld-fnt;
+        }
+      }
     }
+    &.display {
+      font-size: $fld-fnt + 0.1rem;
+      div {
+        &.limitWidth {
+          width: $dtFld-wdth + 5%;
+        }
+      }
+    }
+  }
 }
 
 /* Media Queries */
 @mixin tallMobileScreens($mn-hgt, $mx-wdth) {
-    @media only screen and (min-height: $mn-hgt) and (max-width: $mx-wdth) {
-        @content;
-    }    
+  @media only screen and (min-height: $mn-hgt) and (max-width: $mx-wdth) {
+    @content;
+  }
 }
 
 @mixin flippedMobileScreens($mn-wdth, $mx-hgt) {
-    @media only screen and (min-width: $mn-wdth) and (max-height: $mx-hgt) {
-        @content;
-    }    
+  @media only screen and (min-width: $mn-wdth) and (max-height: $mx-hgt) {
+    @content;
+  }
 }
 
-@mixin padScreens ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) {
-    @media only screen and (min-height: $mn-hgt) and (max-height: $mx-hgt) and (min-width: $mn-wdth) and (max-width: $mx-wdth) {
-        @content;
-    }    
+@mixin padScreens($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) {
+  @media only screen and (min-height: $mn-hgt) and (max-height: $mx-hgt) and (min-width: $mn-wdth) and (max-width: $mx-wdth) {
+    @content;
+  }
 }
 
 @mixin flippedPadScreens($mn-wdth, $max-wdth, $mn-hgt) {
-    @media only screen and (min-width: $mn-wdth) and (max-width: $max-wdth) and (min-height: $mn-hgt) {
-        @content;
-    }    
+  @media only screen and (min-width: $mn-wdth) and (max-width: $max-wdth) and (min-height: $mn-hgt) {
+    @content;
+  }
 }
 
 @mixin laptopScreens($mx-hgt, $mn-wdth) {
-    @media only screen and (max-height: $mx-hgt) and (min-width: $mn-wdth) {
-        @content;
-    }
+  @media only screen and (max-height: $mx-hgt) and (min-width: $mn-wdth) {
+    @content;
+  }
 }

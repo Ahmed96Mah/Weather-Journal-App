@@ -1,9 +1,18 @@
-$pg-main-clr: rgb(93, 0, 146);
-$pg-secondary-clr: rgb(0, 132, 172);
-$hdr-clr: white;
-$main-div-clr: wheat;
-$display-div-br-clr: wheat;
+/* header variables */
+$hdr-clr-main: rgb(3, 47, 143);
+$hdr-clr-sec: rgb(8, 178, 245);
+$hdr-txt-clr: white;
+$hdr-icon-clr: rgba(255, 255, 255, 0.6);
+
+/* page variables */
+$pg-bckgrnd-clr: white;
+$pg-title-clr: rgb(15, 87, 146);
 $button-txt-clr: white;
-$button-txt-hover-clr: rgb(94, 94, 94);
-$button-bg-main-clr: rgb(182, 182, 182);
-$button-bg-secondary-clr: rgb(185, 152, 90);
+$button-clr: rgb(90, 181, 218);
+$bar-brdr-clr: steelblue;
+$border-clr: skyblue;
+
+/* footer variables */
+$ftr-clr-main: rgb(3, 47, 143);
+$ftr-clr-sec: rgb(8, 178, 245);
+$ftr-txt-clr: white;
