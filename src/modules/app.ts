@@ -2,9 +2,9 @@ import { getApiData } from './call.js';
 import { getAndUpdate } from './update.js';
 import { displayAnimation } from './animation.js';
 
-/* Global Variables */
-const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = `&appid=<Your-API-Key-Here>&units=imperial`;
+/* API URL */
+export const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+export const apiKey = `&appid=14758bf4c1139253303e983462631d16&units=imperial`;
 
 // Define the POST Async function
 const postData = async (url: string = '', data: object = {}): Promise<void> => {
@@ -75,7 +75,9 @@ const init = (): void => {
           /* There isn't an instance of 'data' here because 'getAndUpdate()' doesen't need it, as it already has a
            *  defined GET route declared inside of it that retreive the data object from the server.
            */
-          getAndUpdate();
+          setTimeout(() => {
+            getAndUpdate();
+          }, 3500);
         });
     }
   };
