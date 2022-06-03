@@ -10,74 +10,121 @@
   <body>
     <header>
       <h1>Weather Journal App</h1>
+      <h4>Know The Weather around The World</h4>
+      <i class="fa-regular fa-snowflake" id="snow"></i>
+      <i class="fa-solid fa-cloud-sun" id="cloud"></i>
     </header>
+
     <main>
-      <div class="display felx-row">
-        <div>
-          <i class="fa-solid fa-location-dot fa-style"></i>
-          <p id="cityLoc" class="hide"></p>
+      <div class="dataField">
+        <div id="field1">
+          <div class="country">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="">Select a country</option>
+              <option value="us">United States (US)</option>
+              <option value="fr">France (Fr)</option>
+              <option value="de">Germany (Ge)</option>
+              <option value="es">Spain (Sp)</option>
+              <option value="gb">England (GB)</option>
+              <option value="it">Italy (IT)</option>
+              <option value="nl">Netherlands (NL)</option>
+              <option value="pt">Portugal (PT)</option>
+              <option value="th">Thailand (TH)</option>
+            </select>
+          </div>
+
+          <div class="zipSection">
+            <label for="zip">Zipcode</label>
+            <input
+              id="zipcode"
+              type="text"
+              name="zip"
+              placeholder="enter zip code here"
+            />
+          </div>
+
+          <div class="feel">
+            <label for="feelings">Today's Feeling</label>
+            <textarea
+              id="feelings"
+              name="feelings"
+              placeholder="How are you feeling today?"
+            ></textarea>
+          </div>
         </div>
-        <div>
-          <i class="fa-solid fa-calendar-days fa-style"></i>
-          <p id="date" class="hide"></p>
-        </div>
-        <div>
-          <i class="fa-solid fa-temperature-half fa-style"></i>
-          <p id="temp" class="hide"></p>
-        </div>
-        <div>
-          <i class="fa-solid fa-wind fa-style"></i>
-          <p id="windSpeed" class="hide"></p>
-        </div>
-        <div>
-          <i class="fa-solid fa-droplet fa-style"></i>
-          <p id="humidity" class="hide"></p>
-        </div>
-        <div>
-          <i class="fa-solid fa-user fa-style"></i>
-          <p id="content" class="hide"></p>
+
+        <div id="field2">
+          <button id="generate" type="submit">Generate</button>
+          <div id="bar" class="hide">
+            <div id="progress"></div>
+          </div>
         </div>
       </div>
-      <div class="dataField">
-        <div class="country">
-          <label for="country">Country</label>
-          <select id="country" name="country">
-            <option value="">Select a country</option>
-            <option value="us">United States (US)</option>
-            <option value="fr">France (Fr)</option>
-            <option value="de">Germany (Ge)</option>
-            <option value="es">Spain (Sp)</option>
-            <option value="gb">England (GB)</option>
-            <option value="it">Italy (IT)</option>
-            <option value="nl">Netherlands (NL)</option>
-            <option value="pt">Portugal (PT)</option>
-            <option value="th">Thailand (TH)</option>
-          </select>
+
+      <div class="display">
+        <p id="header">Current Readings</p>
+        <div class="section">
+          <div>
+            <i class="fa-solid fa-location-dot fa-style icon"></i>
+            <div class="data">
+              <p class="title">Location</p>
+              <p class="value" id="cityLoc">N/A</p>
+            </div>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-calendar-days fa-style icon"></i>
+            <div class="data">
+              <p class="title">Date</p>
+              <p class="value" id="date">N/A</p>
+            </div>
+          </div>
         </div>
-        <div class="zipSection">
-          <label for="zip">Zipcode</label>
-          <input
-            id="zipcode"
-            type="text"
-            name="zip"
-            placeholder="enter zip code here"
-          />
+
+        <div class="section">
+          <div>
+            <i class="fa-solid fa-temperature-half fa-style icon"></i>
+            <div class="data">
+              <p class="title">Temp</p>
+              <p class="value" id="temp">N/A</p>
+            </div>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-wind fa-style icon"></i>
+            <div class="data">
+              <p class="title">Wind</p>
+              <p class="value" id="windSpeed">N/A</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="dataField">
-        <div class="feel">
-          <label for="feelings">Today's Feeling</label>
-          <textarea
-            id="feelings"
-            name="feelings"
-            placeholder="How are you feeling today?"
-          ></textarea>
+
+        <div class="section">
+          <div>
+            <i class="fa-solid fa-droplet fa-style icon"></i>
+            <div class="data">
+              <p class="title">Humidity</p>
+              <p class="value" id="humidity">N/A</p>
+            </div>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-user fa-style icon"></i>
+            <div class="data">
+              <p class="title">Feel</p>
+              <p class="value" id="feel">N/A</p>
+            </div>
+          </div>
         </div>
-        <button id="generate" type="submit">Generate</button>
       </div>
     </main>
+
     <footer>
-      <p>Created By: Ahmed Mahmoud Abdalwahab</p>
+      <div id="author">
+        <p id="create">Created By</p>
+        <p id="name">Ahmed Mahmoud Abdalwahab</p>
+      </div>
       <div>
         <a href=""><i class="fa-brands fa-instagram" id="i"></i></a>
         <a href=""><i class="fa-brands fa-twitter" id="t"></i></a>
@@ -95,10 +142,11 @@
         </a>
       </div>
     </footer>
+
     <script
       src="https://kit.fontawesome.com/421675ef65.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./dist/modules/app.js"></script>
+    <script type="module" src="dist/modules/app.js"></script>
   </body>
 </html>
