@@ -1,16 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 /* Media Queries */
+/* header variables */
+/* page variables */
+/* footer variables */
 body {
   margin: 0;
-  background: linear-gradient(135deg, #5d0092, #0084ac);
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: 1fr;
-  grid-area: "hdr" "mn" "ftr";
+  grid-area: 'hdr' 'mn' 'ftr';
   gap: 1.5rem;
+}
+body header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 body main {
   display: flex;
@@ -18,51 +26,65 @@ body main {
   justify-content: center;
   align-items: center;
 }
-body main .display.felx-row {
+body main .display {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
-body main .display div {
+body main .display .section {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body main .display .section div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .display .section div .data {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   align-items: center;
 }
 body main .dataField {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+body main .dataField #field1 {
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  /* Media Queries */
 }
-body main .dataField .country {
+body main .dataField #field1 .country {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
-body main .dataField .zipSection {
+body main .dataField #field1 .zipSection {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
-body main .dataField .feel {
+body main .dataField #field1 .feel {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
-@media only screen and (min-height: 37.5em) and (max-width: 20.625em) {
-  body main .dataField {
-    /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
+body main .dataField #field2 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 body footer {
   display: flex;
@@ -76,27 +98,100 @@ body footer div {
   justify-content: space-between;
   align-items: center;
 }
+body footer div#author {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
 header {
-  height: 15vh;
-  margin-bottom: 2rem;
+  height: 45vh;
+  background: linear-gradient(100deg, rgb(8, 178, 245), rgb(3, 47, 143));
+  border-radius: 4rem 0 6rem 0;
   /* Media Queries */
 }
 header h1 {
   color: white;
-  font-family: "Lobster Two", cursive;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-  margin-top: 2.3rem;
+  font-family: 'Lobster Two', cursive;
+  font-size: 1.8rem;
+  margin: 0 0 0.7rem 0;
+  padding: 0 3rem 0 0;
+}
+header h4 {
+  color: white;
+  font-family: 'Lobster Two', cursive;
+  margin: 0;
+  padding: 0 0 0 3rem;
+}
+header i#cloud {
+  position: absolute;
+  top: 27vh;
+  left: 5vw;
+  z-index: 0;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+header i#snow {
+  position: absolute;
+  top: 4vh;
+  right: 5vw;
+  z-index: 0;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+@media only screen and (min-height: 37.5em) and (max-width: 20.625em) {
+  header {
+    /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
+  }
+  header h1 {
+    font-size: 1.45rem;
+    padding: 0 3rem 0 0;
+  }
+  header h4 {
+    font-size: 0.9rem;
+    padding: 0 0 0 2.5rem;
+  }
+  header i#cloud {
+    font-size: 4rem;
+    top: 30vh;
+  }
+  header i#snow {
+    font-size: 4rem;
+    top: 6vh;
+  }
+}
+@media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
+  header {
+    /* Flipped Mobile screens ($mn-wdth, $mx-hgt) */
+  }
+  header i#cloud {
+    top: 19vh;
+  }
+  header i#snow {
+    top: 5vh;
+  }
 }
 @media only screen and (min-height: 60em) and (max-height: 87em) and (min-width: 45em) and (max-width: 64em) {
   header {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
+    height: 25vh;
   }
   header h1 {
-    margin-top: 7rem;
     font-size: 2.5rem;
+  }
+  header h4 {
+    font-size: 1.2rem;
+  }
+  header i#cloud {
+    top: 11vh;
+    left: 4vw;
+    font-size: 8rem;
+  }
+  header i#snow {
+    top: 3vh;
+    right: 4vw;
+    font-size: 8rem;
   }
 }
 @media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 48em) {
@@ -104,8 +199,20 @@ header h1 {
     /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
   }
   header h1 {
-    margin-top: 7rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+  header h4 {
+    font-size: 1.2rem;
+  }
+  header i#cloud {
+    top: 22vh;
+    left: 4vw;
+    font-size: 8rem;
+  }
+  header i#snow {
+    top: 3vh;
+    right: 4vw;
+    font-size: 8rem;
   }
 }
 @media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
@@ -113,15 +220,28 @@ header h1 {
     /* ($mx-hgt, $mn-wdth) */
   }
   header h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+  header h4 {
+    font-size: 1.5rem;
+  }
+  header i#cloud {
+    top: 20vh;
+    left: 4vw;
+    font-size: 7rem;
+  }
+  header i#snow {
+    top: 5vh;
+    right: 4vw;
+    font-size: 7rem;
   }
 }
 
 main {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  color: wheat;
-  padding: 1rem;
+  background-color: white;
+  padding: 0.5rem;
   min-height: 50vh;
   /* Media Queries */
 }
@@ -129,126 +249,137 @@ main div {
   margin: 0.7rem 0;
 }
 main div.dataField {
-  width: 100%;
+  background-color: rgba(207, 212, 214, 0.5);
+  border-radius: 2rem;
+  width: 90%;
 }
-main div.dataField label {
+main div.dataField #field1 label {
+  font-size: 1.1rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.6rem;
+  color: rgb(15, 87, 146);
 }
-main div.dataField .country select {
+main div.dataField #field1 .country select {
   padding: 0.25rem;
   border-radius: 0.7rem;
   border: none;
   padding: 0.5rem;
+  border: 2px solid skyblue;
 }
-main div.dataField .zipSection input {
+main div.dataField #field1 .zipSection input {
   padding: 0.25rem;
   border-radius: 0.7rem;
   border: none;
   width: 7.5rem;
   padding: 0.5rem;
+  border: 2px solid skyblue;
 }
-main div.dataField .feel textarea {
+main div.dataField #field1 .feel textarea {
   padding: 0.25rem;
   border-radius: 0.7rem;
   border: none;
   padding: 0.35rem;
-  height: 2rem;
-  min-height: 1.3rem;
-  max-height: 5rem;
-  width: 45vw;
-  min-width: 30vw;
-  max-width: 55vw;
+  height: 1.35rem;
+  min-height: 1.35rem;
+  max-height: 1.35rem;
+  width: 13rem;
+  min-width: 13rem;
+  max-width: 13rem;
+  border: 2px solid skyblue;
 }
-main div.dataField button {
+main div.dataField #field2 button {
+  font-size: 0.95rem;
+  width: 12rem;
   color: white;
+  background-color: rgb(90, 181, 218);
+  border: 1.5px solid rgb(90, 181, 218);
   font-weight: bold;
-  padding: 1rem;
-  border-radius: 1rem;
-  background: linear-gradient(100deg, #b6b6b6, #b9985a);
-  border: none;
-  margin-top: 1.2rem;
+  padding: 0.6rem;
+  border-radius: 1.5rem;
+  margin: 1.2rem 0 0.5rem 0;
 }
-main div.dataField button:hover {
+main div.dataField #field2 button:hover {
   cursor: pointer;
-  color: #5e5e5e;
-  background: linear-gradient(200deg, #b6b6b6, #b9985a);
+  color: rgb(90, 181, 218);
+  background-color: white;
+  border: 1.5px solid rgb(90, 181, 218);
+}
+main div.dataField #field2 #bar {
+  width: 80%;
+  height: 1rem;
+  border: 2px solid steelblue;
+  border-radius: 1rem;
+  transition: opacity 0.5s ease-in-out;
+}
+main div.dataField #field2 #bar #progress {
+  margin: 0;
+  padding: 0;
+  background-color: skyblue;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  max-width: 0%;
+  transition: max-width 4s ease-in-out;
+}
+main div.dataField #field2 #bar #progress.full {
+  max-width: 100%;
+}
+main div.dataField #field2 #bar.hide {
+  opacity: 0;
+}
+main div.dataField #field2 #bar.show {
+  opacity: 1;
 }
 main div.display {
-  border: 2px solid wheat;
-  border-radius: 1rem;
-  height: 30rem;
-  max-height: 4rem;
-  transition: max-height 1s ease-in-out;
-  width: 70vw;
-  box-shadow: 1px 4px 4px rgba(192, 192, 192, 0.548);
+  width: 100%;
 }
-main div.display div {
-  padding-top: 0.85rem;
+main div.display div.section {
+  width: 100%;
+  margin: 0;
 }
-main div.display div.hide {
-  display: none;
+main div.display div.section i {
+  font-size: 2.7rem;
+  color: rgba(170, 229, 252, 0.808);
+  margin-right: 0.75rem;
 }
-main div.display div.limitWidth {
-  width: 75%;
-  padding-left: 1.5rem;
-}
-main div.display div .hide {
-  display: none;
-}
-main div.display div i.fa-style {
+main div.display div.section i.fa-style {
   --fa-beat-fade-opacity: 0.1;
   --fa-beat-fade-scale: 1.25;
 }
-main div.display.extend {
-  max-height: 30rem;
+main div.display div.section .value {
+  margin: 0;
+  color: rgb(15, 87, 146);
+  text-align: center;
+}
+main div.display div.section .title {
+  margin-top: 0;
+  text-decoration: underline;
+  font-weight: bold;
+  color: rgb(15, 87, 146);
+  text-align: center;
+}
+main div.display div.section div {
+  margin: 0.5rem 0.6rem;
+}
+main div.display #header {
+  font-family: 'Lobster Two', cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: rgba(15, 87, 146, 0.925);
 }
 @media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
   main {
-    /* ($mn-hgt, $mx-wdth) */
+    /* Tall Mobile Screens ($mn-hgt, $mx-wdth) */
     min-height: 40vh;
-  }
-  main div.display {
-    width: 70vw;
-    height: 30rem;
-    max-height: 4rem;
-  }
-  main div.display.extend {
-    max-height: 30rem;
   }
 }
 @media only screen and (min-height: 37.5em) and (max-width: 20.625em) {
   main {
     /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
   }
-  main div.dataField .feel textarea {
-    width: 55vw;
-    max-width: 70vw;
-  }
-  main div.display {
-    width: 85vw;
-    height: 30.5rem;
-    max-height: 4rem;
-  }
-  main div.display.extend {
-    max-height: 30.5rem;
-  }
-  main div.display div.limitWidth {
-    width: 80%;
-  }
-}
-@media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
-  main {
-    /* ($mn-wdth, $mx-hgt) */
-  }
-  main div.display {
-    width: 55vw;
-    height: 30rem;
-    max-height: 4rem;
-  }
-  main div.display.extend {
-    max-height: 30rem;
+  main div.display div.section i {
+    margin-right: 1.3rem;
   }
 }
 @media only screen and (min-height: 60em) and (max-height: 87em) and (min-width: 45em) and (max-width: 64em) {
@@ -258,7 +389,7 @@ main div.display.extend {
     min-height: 45vh;
   }
   main div.dataField {
-    width: 80%;
+    width: 90%;
   }
   main div.dataField button {
     font-size: 1.1rem;
@@ -277,16 +408,10 @@ main div.display.extend {
     font-size: 1.1rem;
   }
   main div.display {
-    width: 50vw;
-    height: 34rem;
-    max-height: 4.5rem;
     font-size: 1.2rem;
   }
-  main div.display.extend {
-    max-height: 34rem;
-  }
   main div.display div.limitWidth {
-    width: 85%;
+    width: 95%;
   }
 }
 @media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 48em) {
@@ -296,7 +421,7 @@ main div.display.extend {
     min-height: 55vh;
   }
   main div.dataField {
-    width: 80%;
+    width: 90%;
   }
   main div.dataField button {
     font-size: 1.1rem;
@@ -315,70 +440,77 @@ main div.display.extend {
     font-size: 1.1rem;
   }
   main div.display {
-    width: 40vw;
-    height: 34rem;
-    max-height: 4.5rem;
     font-size: 1.2rem;
   }
-  main div.display.extend {
-    max-height: 34rem;
-  }
   main div.display div.limitWidth {
-    width: 85%;
+    width: 95%;
   }
 }
 @media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
   main {
     /* ($mx-hgt, $mn-wdth) */
   }
-  main div.dataField {
-    width: 45%;
-  }
   main div.dataField .feel textarea {
-    width: 25vw;
-    min-width: 20vw;
-    max-width: 30vw;
+    width: 15rem;
   }
-  main div.display {
-    width: 30vw;
-    height: 34rem;
-    max-height: 4.5rem;
-    font-size: 1.2rem;
+  main div.display div.section i {
+    font-size: 3rem;
+    margin-right: 1rem;
   }
-  main div.display.extend {
-    max-height: 34rem;
+  main div.display div.section .value {
+    margin: 0;
   }
-  main div.display div.limitWidth {
-    width: 85%;
+  main div.display div.section .title {
+    margin-top: 0;
   }
 }
 
 footer {
-  color: wheat;
+  color: white;
   padding: 1rem;
+  border-radius: 5rem 0 0 0;
+  background: linear-gradient(100deg, rgb(8, 178, 245), rgb(3, 47, 143));
   /* Media Queries */
 }
-footer p {
-  font-family: "Lobster Two", cursive;
-  font-size: 1.1rem;
-}
 footer div {
-  width: 80%;
+  width: 85%;
   margin: 1rem 0;
 }
 footer div i {
   cursor: pointer;
   font-size: 2.2rem;
-  color: wheat;
+  color: white;
 }
 footer div i.fa-style {
   --fa-beat-fade-opacity: 0.1;
   --fa-beat-fade-scale: 1.25;
 }
-@media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
+footer div#author p {
+  font-family: 'Lobster Two', cursive;
+  font-size: 1.2rem;
+  width: 100%;
+}
+footer div#author p#create {
+  margin: 0;
+  padding: 0 0 0.6rem 0;
+}
+footer div#author p#name {
+  margin: 0;
+  padding: 0 0 0 5rem;
+}
+@media only screen and (min-height: 37.5em) and (max-width: 20.625em) {
   footer {
-    /* ($mn-hgt, $mx-wdth) */
-    min-height: 30vh;
+    /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
+    min-height: 25vh;
+  }
+  footer div#author {
+    font-size: 0.75rem;
+  }
+  footer div#author#create {
+    padding: 0 0 0.6rem 0;
+  }
+  footer div#author#name {
+    padding: 0 0 0 5rem;
   }
 }
 @media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
@@ -386,13 +518,13 @@ footer div i.fa-style {
     /* ($mn-wdth, $mx-hgt) */
   }
   footer div {
-    max-width: 45%;
+    max-width: 55%;
   }
 }
 @media only screen and (min-height: 60em) and (max-height: 87em) and (min-width: 45em) and (max-width: 64em) {
   footer {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    min-height: 30vh;
+    min-height: 18vh;
   }
   footer p {
     font-size: 2rem;
