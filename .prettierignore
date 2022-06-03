@@ -9,6 +9,3 @@ spec
 
 # Ignore .json files
 *.json
-
-# Ignore all Js files
-*.js
