@@ -5,12 +5,12 @@
   "description": "Responsive Weather Journal Application with a mobile first approach",
   "main": "server.js",
   "scripts": {
+    "start": "node dist/server.js",
     "build": "npx tsc",
     "jasmine": "npx jasmine",
     "jas-test": "npm run build && npm run jasmine",
     "prettier": "prettier --config .prettierrc.json --ignore-path .prettierignore --write .",
-    "lint": "npx eslint --config .eslintrc.json ./src/**/*.ts",
-    "test": "db-migrate --env test up && npm run jas-test && db-migrate --env test reset"
+    "lint": "npx eslint --config .eslintrc.json ./src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
     "@types/eslint": "^8.4.2",
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.33",
