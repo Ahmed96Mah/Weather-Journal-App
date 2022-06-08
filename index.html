@@ -6,114 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Journal App</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/cloud-solid.svg">
   </head>
   <body>
     <header>
-      <h1>Weather Journal App</h1>
-      <h4>Know The Weather around The World</h4>
-      <i class="fa-regular fa-snowflake" id="snow"></i>
-      <i class="fa-solid fa-cloud-sun" id="cloud"></i>
+      <h1>WJA</h1>
     </header>
 
     <main>
-      <div class="dataField">
-        <div id="field1">
-          <div class="country">
-            <label for="country">Country</label>
-            <select id="country" name="country">
-              <option value="">Select a country</option>
-              <option value="us">United States (US)</option>
-              <option value="fr">France (Fr)</option>
-              <option value="de">Germany (Ge)</option>
-              <option value="es">Spain (Sp)</option>
-              <option value="gb">England (GB)</option>
-              <option value="it">Italy (IT)</option>
-              <option value="nl">Netherlands (NL)</option>
-              <option value="pt">Portugal (PT)</option>
-              <option value="th">Thailand (TH)</option>
-            </select>
-          </div>
-
-          <div class="zipSection">
-            <label for="zip">Zipcode</label>
-            <input
-              id="zipcode"
-              type="text"
-              name="zip"
-              placeholder="enter zip code here"
-            />
-          </div>
-
-          <div class="feel">
-            <label for="feelings">Today's Feeling</label>
-            <textarea
-              id="feelings"
-              name="feelings"
-              placeholder="How are you feeling today?"
-            ></textarea>
-          </div>
-        </div>
-
-        <div id="field2">
-          <button id="generate" type="submit">Generate</button>
-          <div id="bar" class="hide">
-            <div id="progress"></div>
-          </div>
+      <div class="D-T-L">
+        <div class="D-T">
+          <p id="time" class="hide"></p>
+          <p id="date" class="hide"></p>
         </div>
       </div>
-
-      <div class="display">
-        <p id="header">Current Readings</p>
-        <div class="section">
-          <div>
-            <i class="fa-solid fa-location-dot fa-style icon"></i>
-            <div class="data">
+      <div class="app">
+        <div class="dataField">
+          <div id="field1">
+            <div class="country">
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="us">United States (US)</option>
+                <option value="fr">France (Fr)</option>
+                <option value="de">Germany (Ge)</option>
+                <option value="es">Spain (Sp)</option>
+                <option value="gb">England (GB)</option>
+                <option value="it">Italy (IT)</option>
+                <option value="nl">Netherlands (NL)</option>
+                <option value="pt">Portugal (PT)</option>
+                <option value="th">Thailand (TH)</option>
+              </select>
+            </div>
+  
+            <div class="zipSection">
+              <label for="zip">Zipcode</label>
+              <input
+                id="zipcode"
+                type="text"
+                name="zip"
+                placeholder="enter zip code here"
+              />
+            </div>
+  
+            <div class="feel">
+              <label for="feelings">Today's Feeling</label>
+              <textarea
+                id="feelings"
+                name="feelings"
+                placeholder="Your Current Feeling?"
+              ></textarea>
+            </div>
+          </div>
+  
+          <div id="field2">
+            <button id="generate" type="submit">Generate</button>
+          </div>
+        </div>
+  
+        <div class="display">
+          <p id="header">Current Readings</p>
+          <div class="section">
+            <div>
+              <i class="fa-solid fa-location-dot fa-style icon"></i>
               <p class="title">Location</p>
-              <p class="value" id="cityLoc">N/A</p>
+              <p class="value hide" id="cityLoc"></p>
             </div>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-calendar-days fa-style icon"></i>
-            <div class="data">
-              <p class="title">Date</p>
-              <p class="value" id="date">N/A</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div>
-            <i class="fa-solid fa-temperature-half fa-style icon"></i>
-            <div class="data">
+            <div>
+              <i class="fa-solid fa-temperature-half fa-style icon"></i>
               <p class="title">Temp</p>
-              <p class="value" id="temp">N/A</p>
+              <p class="value hide" id="temp"></p>
             </div>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-wind fa-style icon"></i>
-            <div class="data">
+  
+            <div>
+              <i class="fa-solid fa-wind fa-style icon"></i>
               <p class="title">Wind</p>
-              <p class="value" id="windSpeed">N/A</p>
+              <p class="value hide" id="windSpeed"></p>
             </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div>
-            <i class="fa-solid fa-droplet fa-style icon"></i>
-            <div class="data">
+  
+            <div>
+              <i class="fa-solid fa-droplet fa-style icon"></i>
               <p class="title">Humidity</p>
-              <p class="value" id="humidity">N/A</p>
+              <p class="value hide" id="humidity"></p>
             </div>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-user fa-style icon"></i>
-            <div class="data">
+  
+            <div>
+              <i class="fa-solid fa-user fa-style icon"></i>
               <p class="title">Feel</p>
-              <p class="value" id="feel">N/A</p>
+              <p class="value hide" id="feel"></p>
             </div>
           </div>
         </div>
