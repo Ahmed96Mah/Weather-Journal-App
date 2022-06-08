@@ -44,14 +44,14 @@ body {
         }
       }
     }
-    }
-    footer {
-      @include m.displayFlex(row, wrap, center, center);
-      div {
-        @include m.displayFlex(row, nowrap, space-between, center);
-        &#author {
-          @include m.displayFlex(column, nowrap, center, center);
-        }
+  }
+  footer {
+    @include m.displayFlex(row, wrap, center, center);
+    div {
+      @include m.displayFlex(row, nowrap, space-between, center);
+      &#author {
+        @include m.displayFlex(column, nowrap, center, center);
       }
+    }
   }
 }

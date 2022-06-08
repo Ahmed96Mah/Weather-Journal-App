@@ -13,7 +13,8 @@ main {
     &.D-T-L {
       margin: 0;
       padding-bottom: 65vh;
-      background: no-repeat center/290% url("../assets/pexels-pixabay-258136.jpg");
+      background: no-repeat center/290%
+        url('../assets/pexels-pixabay-258136.jpg');
       border-radius: 0 0 0 5rem;
       div {
         &.D-T {
@@ -154,7 +155,8 @@ main {
   @include m.flippedMobileScreens(31.25em, 28.125em) {
     div {
       &.D-T-L {
-        background: no-repeat center/100% url("../assets/pexels-pixabay-258136.jpg");
+        background: no-repeat center/100%
+          url('../assets/pexels-pixabay-258136.jpg');
       }
     }
   }
@@ -166,7 +168,8 @@ main {
     /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
     div {
       &.D-T-L {
-        background: no-repeat center/330% url("../assets/pexels-pixabay-258136.jpg");
+        background: no-repeat center/330%
+          url('../assets/pexels-pixabay-258136.jpg');
         div {
           &.D-T {
             margin: 0 0 0 0.85rem;
@@ -199,7 +202,8 @@ main {
     div {
       &.D-T-L {
         padding-bottom: 40vh;
-        background: no-repeat center/150% url("../assets/pexels-pixabay-258136.jpg");
+        background: no-repeat center/150%
+          url('../assets/pexels-pixabay-258136.jpg');
       }
       &.app {
         margin: 2rem 0;
@@ -221,7 +225,8 @@ main {
     div {
       &.D-T-L {
         padding-bottom: 40vh;
-        background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
+        background: no-repeat top/100%
+          url('../assets/pexels-pixabay-258136.jpg');
       }
       &.app {
         margin: 0;
@@ -243,7 +248,8 @@ main {
     div {
       &.D-T-L {
         padding-bottom: 40vh;
-        background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
+        background: no-repeat top/100%
+          url('../assets/pexels-pixabay-258136.jpg');
       }
       &.app {
         margin: 0;
@@ -259,5 +265,5 @@ main {
         }
       }
     }
-  } 
+  }
 }

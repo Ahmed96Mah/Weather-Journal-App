@@ -13,7 +13,7 @@ header {
     font-size: v.$hdr-font-size;
     padding-left: 1.2rem;
   }
-  
+
   /* Media Queries */
   @include m.flippedMobileScreens(31.25em, 28.125em) {
     /* Flipped Mobile screens ($mn-wdth, $mx-hgt) */
@@ -23,21 +23,21 @@ header {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
     height: 5rem;
     h1 {
-      font-size: v.$hdr-font-size+0.4rem;
+      font-size: v.$hdr-font-size + 0.4rem;
     }
   }
   @include m.flippedPadScreens(64em, 87em, 48em) {
     /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
     height: 5rem;
     h1 {
-      font-size: v.$hdr-font-size+0.4rem;
+      font-size: v.$hdr-font-size + 0.4rem;
     }
   }
   @include m.laptopScreens(40.75em, 59.375em) {
     /* Laptop Screens ($mx-hgt, $mn-wdth) */
     height: 4.5rem;
     h1 {
-      font-size: v.$hdr-font-size+0.2rem;
+      font-size: v.$hdr-font-size + 0.2rem;
     }
   }
 }
