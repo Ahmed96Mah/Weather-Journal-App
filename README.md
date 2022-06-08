@@ -8,7 +8,7 @@
 
 **Important Note** The openWeather Map API key included in the porject has been deactivated. So, to be able to use the
 application you have to create an account on the 'openweathermap.org' site. <br>
-Then, subscribe to the **'current weather and forecast'** service with a **free plan**. After that, generate your key and replace the deactivated key (located in the app.ts 'line 7') with yours.
+Then, subscribe to the **'current weather and forecast'** service with a **free plan**. After that, generate your key and place it in the app.ts file ('line 6'). After that, make sure to build the Js files again (If you have already done so).
 
 ### Project's details:
 
