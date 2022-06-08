@@ -32,8 +32,11 @@ const setDate_Time = (): void => {
   // Create a new date instance dynamically with JS
   const date: Date = new Date();
   const dateStr = date.toString();
-  const time = `${dateStr.slice(16,21)}`;
-  const fullDate = `${dateStr.slice(0,3)}, ${dateStr.slice(4,7)} ${dateStr.slice(8,10)}, ${dateStr.slice(11,15)}`;
+  const time = `${dateStr.slice(16, 21)}`;
+  const fullDate = `${dateStr.slice(0, 3)}, ${dateStr.slice(
+    4,
+    7
+  )} ${dateStr.slice(8, 10)}, ${dateStr.slice(11, 15)}`;
   date_parag.textContent = fullDate;
   time_parag.textContent = time;
   setInterval(setDate_Time, 60000);
@@ -82,10 +85,10 @@ const init = (): void => {
         .then(() => {
           /* There isn't an instance of 'data' here because 'getAndUpdate()' doesen't need it, as it already has a
            *  defined GET route declared inside of it that retreive the data object from the server.
-          */
+           */
           getAndUpdate();
         });
-    }else {
+    } else {
       alert('Please make sure to select a country & Enter a zipcode!');
     }
   };
