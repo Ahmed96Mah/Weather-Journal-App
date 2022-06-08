@@ -6,8 +6,8 @@
 footer {
   color: v.$ftr-txt-clr;
   padding: 1rem;
-  border-radius: 5rem 0 0 0;
-  background: linear-gradient(100deg, v.$ftr-clr-sec, v.$ftr-clr-main);
+  border-radius: 0 5rem 0 0;
+  background: linear-gradient(100deg, v.$ftr-clr-main, v.$ftr-clr-sec);
   div {
     width: 85%;
     margin: 1rem 0;
@@ -22,6 +22,7 @@ footer {
     }
     &#author {
       p {
+        color: v.$ftr-txt-clr;
         font-family: 'Lobster Two', cursive;
         font-size: 1.2rem;
         width: 100%;
@@ -61,33 +62,40 @@ footer {
   }
   @include m.padScreens(60em, 87em, 45em, 64em) {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    min-height: 18vh;
-    p {
-      font-size: 2rem;
-    }
+    min-height: 15vh;
     div {
       max-width: 55%;
+      &#author {
+        p {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
   @include m.flippedPadScreens(64em, 87em, 48em) {
     /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    min-height: 30vh;
-    p {
-      font-size: 2rem;
-    }
+    max-height: 20vh;
     div {
       max-width: 40%;
+      &#author {
+        p {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
   @include m.laptopScreens(40.75em, 59.375em) {
     /* ($mx-hgt, $mn-wdth) */
-    p {
-      font-size: 1.5rem;
-    }
+    min-height: 20vh;
     div {
       width: 35%;
       i {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
+      }
+      &#author {
+        p {
+          font-size: 1.1rem;
+        }
       }
     }
   }
