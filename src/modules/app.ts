@@ -1,10 +1,9 @@
 import { getApiData } from './call.js';
 import { getAndUpdate } from './update.js';
-import { displayAnimation } from './animation.js';
 
 /* API URL */
 export const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-export const apiKey = `&appid=<Your-API-Key-Goes-HERE>&units=imperial`;
+export const apiKey = `&appid=<Your-API-Key-Goes-Here>&units=imperial`;
 
 // Define the POST Async function
 const postData = async (url: string = '', data: object = {}): Promise<void> => {
@@ -27,10 +26,23 @@ const postData = async (url: string = '', data: object = {}): Promise<void> => {
   }
 };
 
+const setDate_Time = (): void => {
+  const time_parag = document.getElementById('time')!;
+  const date_parag = document.getElementById('date')!;
+  // Create a new date instance dynamically with JS
+  const date: Date = new Date();
+  const dateStr = date.toString();
+  const time = `${dateStr.slice(16,21)}`;
+  const fullDate = `${dateStr.slice(0,3)}, ${dateStr.slice(4,7)} ${dateStr.slice(8,10)}, ${dateStr.slice(11,15)}`;
+  date_parag.textContent = fullDate;
+  time_parag.textContent = time;
+  setInterval(setDate_Time, 60000);
+};
+
 // Define the main function that runs after the DOM has successfuly loaded
 const init = (): void => {
   // Defining The social animation listener Callback
-  const socialAnimation = (evt: Event) => {
+  const socialAnimation = (evt: Event): void => {
     if (
       (evt.target! as HTMLLIElement).nodeName === 'I' &&
       (evt.target! as HTMLLIElement).classList.contains('fa-brands')
@@ -40,14 +52,11 @@ const init = (): void => {
     }
   };
 
-  // Defining The listener Callback
-  const processClick = () => {
-    // Create a new date instance dynamically with JS
-    const d: Date = new Date();
-    const newDate: string =
-      d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
+  // Set date and time for the current page
+  setDate_Time();
 
-    displayAnimation();
+  // Defining The listener Callback
+  const processClick = (): void => {
     // First, collect user's zipcode, feeling & country selection
     const zipCode = (document.getElementById('zipcode')! as HTMLInputElement)
       .value;
@@ -64,8 +73,7 @@ const init = (): void => {
           postData('/savedata', {
             //@ts-ignore
             temp: data['main'].temp,
-            feel: userFeel,
-            date: newDate, //@ts-ignore
+            feel: userFeel, //@ts-ignore
             loc: data['name'], //@ts-ignore
             humid: data['main'].humidity, //@ts-ignore
             wind: data['wind'].speed,
@@ -74,18 +82,19 @@ const init = (): void => {
         .then(() => {
           /* There isn't an instance of 'data' here because 'getAndUpdate()' doesen't need it, as it already has a
            *  defined GET route declared inside of it that retreive the data object from the server.
-           */
-          setTimeout(() => {
-            getAndUpdate();
-          }, 3500);
+          */
+          getAndUpdate();
         });
+    }else {
+      alert('Please make sure to select a country & Enter a zipcode!');
     }
   };
 
   // Adding a click event listener for the button.
   document.getElementById('generate')!.addEventListener('click', processClick);
-  const socialIcons = document.querySelectorAll('i.fa-brands');
 
+  // Adding Mouse-Related events for social icons
+  const socialIcons = document.querySelectorAll('i.fa-brands');
   for (const icon of socialIcons) {
     icon.addEventListener('mouseenter', socialAnimation);
     icon.addEventListener('mouseleave', socialAnimation);
