@@ -5,48 +5,53 @@ body {
   margin: 0;
   @include m.displayGrid(3, 1fr, 'hdr' 'mn' 'ftr');
   header {
-    @include m.displayFlex(column, nowrap, center, center);
+    @include m.displayFlex(column, nowrap, center, flex-start);
   }
   main {
-    @include m.displayFlex(column, nowrap, center, center);
-    .display {
-      @include m.displayFlex(column, nowrap, center, center);
-      .section {
-        @include m.displayFlex(row, wrap, space-around, center);
-        div {
+    .D-T-L {
+      @include m.displayFlex(row, wrap, space-between, center);
+      .loc {
+        @include m.displayFlex(column, wrap, center, center);
+      }
+    }
+    .app {
+      @include m.displayFlex(row, wrap, space-around, center);
+      .display {
+        @include m.displayFlex(column, nowrap, center, center);
+        .section {
           @include m.displayFlex(row, wrap, space-between, center);
-          .data {
+          div {
             @include m.displayFlex(column, nowrap, center, center);
           }
         }
       }
-    }
-    .dataField {
-      @include m.displayFlex(column, nowrap, center, stretch);
-      #field1 {
-        @include m.displayFlex(row, wrap, space-around, center);
-        .country {
-          @include m.displayFlex(column, nowrap, center, stretch);
+      .dataField {
+        @include m.displayFlex(column, nowrap, center, stretch);
+        #field1 {
+          @include m.displayFlex(row, wrap, center, center);
+          .country {
+            @include m.displayFlex(column, nowrap, center, stretch);
+          }
+          .zipSection {
+            @include m.displayFlex(column, nowrap, center, stretch);
+          }
+          .feel {
+            @include m.displayFlex(column, nowrap, center, stretch);
+          }
         }
-        .zipSection {
-          @include m.displayFlex(column, nowrap, center, stretch);
-        }
-        .feel {
-          @include m.displayFlex(column, nowrap, center, stretch);
+        #field2 {
+          @include m.displayFlex(column, nowrap, center, center);
         }
       }
-      #field2 {
-        @include m.displayFlex(column, nowrap, center, center);
-      }
     }
-  }
-  footer {
-    @include m.displayFlex(column, nowrap, center, center);
-    div {
-      @include m.displayFlex(row, nowrap, space-between, center);
-      &#author {
-        @include m.displayFlex(column, nowrap, center, center);
-      }
     }
+    footer {
+      @include m.displayFlex(row, wrap, center, center);
+      div {
+        @include m.displayFlex(row, nowrap, space-between, center);
+        &#author {
+          @include m.displayFlex(column, nowrap, center, center);
+        }
+      }
   }
 }
