@@ -1,18 +1,28 @@
 /* header variables */
-$hdr-clr-main: rgb(3, 47, 143);
-$hdr-clr-sec: rgb(8, 178, 245);
+$hdr-clr-main: rgb(12, 202, 202);
+$hdr-clr-sec: rgba(75, 214, 207, 0.699);
 $hdr-txt-clr: white;
-$hdr-icon-clr: rgba(255, 255, 255, 0.6);
+$hdr-font-size: 1.8rem;
 
 /* page variables */
+$pg-font-size: 1rem;
 $pg-bckgrnd-clr: white;
 $pg-title-clr: rgb(15, 87, 146);
+$pg-title-opac-clr: rgba(15, 87, 146, 0.925);
 $button-txt-clr: white;
 $button-clr: rgb(90, 181, 218);
-$bar-brdr-clr: steelblue;
-$border-clr: skyblue;
+$loc-icon-bckgrnd: rgba(184, 148, 57, 0.719);
+$loc-icon-clr: rgb(177, 129, 7);
+$temp-icon-bckgrnd: rgba(177, 70, 70, 0.603);
+$temp-icon-clr: darkred;
+$wind-icon-bckgrnd: rgba(68, 172, 172, 0.603);
+$wind-icon-clr: rgb(1, 124, 124);
+$droplet-icon-bckgrnd: rgba(57, 57, 161, 0.603);
+$droplet-icon-clr: darkblue;
+$user-icon-bckgrnd: rgba(57, 160, 57, 0.603);
+$user-icon-clr: darkgreen;
 
 /* footer variables */
-$ftr-clr-main: rgb(3, 47, 143);
-$ftr-clr-sec: rgb(8, 178, 245);
+$ftr-clr-main: rgb(12, 202, 177);
+$ftr-clr-sec: rgba(84, 81, 230, 0.699);
 $ftr-txt-clr: white;
