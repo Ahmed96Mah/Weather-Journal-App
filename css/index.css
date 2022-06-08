@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
 /* Media Queries */
 /* header variables */
 /* page variables */
@@ -11,76 +11,81 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: 1fr;
-  grid-area: 'hdr' 'mn' 'ftr';
-  gap: 1.5rem;
+  grid-area: "hdr" "mn" "ftr";
 }
 body header {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
-body main {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-body main .display {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-body main .display .section {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-body main .display .section div {
+body main .D-T-L {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
 }
-body main .display .section div .data {
+body main .D-T-L .loc {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
-body main .dataField {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: stretch;
-}
-body main .dataField #field1 {
+body main .app {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
 }
-body main .dataField #field1 .country {
+body main .app .display {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main .app .display .section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .app .display .section div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main .app .dataField {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
-body main .dataField #field1 .zipSection {
+body main .app .dataField #field1 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+body main .app .dataField #field1 .country {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
-body main .dataField #field1 .feel {
+body main .app .dataField #field1 .zipSection {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
-body main .dataField #field2 {
+body main .app .dataField #field1 .feel {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+body main .app .dataField #field2 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -88,7 +93,7 @@ body main .dataField #field2 {
 }
 body footer {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
@@ -106,370 +111,279 @@ body footer div#author {
 }
 
 header {
-  height: 45vh;
-  background: linear-gradient(100deg, rgb(8, 178, 245), rgb(3, 47, 143));
-  border-radius: 4rem 0 6rem 0;
+  height: 3.5rem;
+  background: linear-gradient(100deg, rgb(12, 202, 202), rgba(75, 214, 207, 0.699));
   /* Media Queries */
 }
 header h1 {
+  margin: 0.5rem 0;
   color: white;
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   font-size: 1.8rem;
-  margin: 0 0 0.7rem 0;
-  padding: 0 3rem 0 0;
-}
-header h4 {
-  color: white;
-  font-family: 'Lobster Two', cursive;
-  margin: 0;
-  padding: 0 0 0 3rem;
-}
-header i#cloud {
-  position: absolute;
-  top: 27vh;
-  left: 5vw;
-  z-index: 0;
-  font-size: 5rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-header i#snow {
-  position: absolute;
-  top: 4vh;
-  right: 5vw;
-  z-index: 0;
-  font-size: 5rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-@media only screen and (min-height: 37.5em) and (max-width: 20.625em) {
-  header {
-    /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
-  }
-  header h1 {
-    font-size: 1.45rem;
-    padding: 0 3rem 0 0;
-  }
-  header h4 {
-    font-size: 0.9rem;
-    padding: 0 0 0 2.5rem;
-  }
-  header i#cloud {
-    font-size: 4rem;
-    top: 30vh;
-  }
-  header i#snow {
-    font-size: 4rem;
-    top: 6vh;
-  }
+  padding-left: 1.2rem;
 }
 @media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
   header {
     /* Flipped Mobile screens ($mn-wdth, $mx-hgt) */
-  }
-  header i#cloud {
-    top: 19vh;
-  }
-  header i#snow {
-    top: 5vh;
+    height: 3.5rem;
   }
 }
 @media only screen and (min-height: 60em) and (max-height: 87em) and (min-width: 45em) and (max-width: 64em) {
   header {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    height: 25vh;
+    height: 5rem;
   }
   header h1 {
-    font-size: 2.5rem;
-  }
-  header h4 {
-    font-size: 1.2rem;
-  }
-  header i#cloud {
-    top: 11vh;
-    left: 4vw;
-    font-size: 8rem;
-  }
-  header i#snow {
-    top: 3vh;
-    right: 4vw;
-    font-size: 8rem;
+    font-size: 2.2rem;
   }
 }
 @media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 48em) {
   header {
     /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
+    height: 5rem;
   }
   header h1 {
-    font-size: 3rem;
-  }
-  header h4 {
-    font-size: 1.2rem;
-  }
-  header i#cloud {
-    top: 22vh;
-    left: 4vw;
-    font-size: 8rem;
-  }
-  header i#snow {
-    top: 3vh;
-    right: 4vw;
-    font-size: 8rem;
+    font-size: 2.2rem;
   }
 }
 @media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
   header {
-    /* ($mx-hgt, $mn-wdth) */
+    /* Laptop Screens ($mx-hgt, $mn-wdth) */
+    height: 4.5rem;
   }
   header h1 {
-    font-size: 3rem;
-  }
-  header h4 {
-    font-size: 1.5rem;
-  }
-  header i#cloud {
-    top: 20vh;
-    left: 4vw;
-    font-size: 7rem;
-  }
-  header i#snow {
-    top: 5vh;
-    right: 4vw;
-    font-size: 7rem;
+    font-size: 2rem;
   }
 }
 
 main {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  background-color: white;
-  padding: 0.5rem;
   min-height: 50vh;
   /* Media Queries */
 }
 main div {
   margin: 0.7rem 0;
 }
-main div.dataField {
-  background-color: rgba(207, 212, 214, 0.5);
-  border-radius: 2rem;
-  width: 90%;
+main div.D-T-L {
+  margin: 0;
+  padding-bottom: 65vh;
+  background: no-repeat center/290% url("../assets/pexels-pixabay-258136.jpg");
+  border-radius: 0 0 0 5rem;
 }
-main div.dataField #field1 label {
+main div.D-T-L div.D-T p {
+  margin: 0 0 0 1.5rem;
+}
+main div.D-T-L div.D-T p#time {
+  font-size: 1.8rem;
+}
+main div.D-T-L div.D-T p#date {
+  font-size: 1rem;
+}
+main div.app {
+  width: 100%;
+  background-color: white;
+  margin: 0;
+}
+main div.app .dataField #field1 label {
   font-size: 1.1rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.6rem;
   color: rgb(15, 87, 146);
 }
-main div.dataField #field1 .country select {
-  padding: 0.25rem;
-  border-radius: 0.7rem;
-  border: none;
-  padding: 0.5rem;
-  border: 2px solid skyblue;
+main div.app .dataField #field1 .country {
+  margin: 0.35rem;
 }
-main div.dataField #field1 .zipSection input {
-  padding: 0.25rem;
-  border-radius: 0.7rem;
-  border: none;
+main div.app .dataField #field1 .country select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid grey;
+}
+main div.app .dataField #field1 .zipSection {
+  margin: 0.35rem;
+}
+main div.app .dataField #field1 .zipSection input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid grey;
   width: 7.5rem;
-  padding: 0.5rem;
-  border: 2px solid skyblue;
+  text-decoration: 1px underline grey;
 }
-main div.dataField #field1 .feel textarea {
-  padding: 0.25rem;
-  border-radius: 0.7rem;
-  border: none;
-  padding: 0.35rem;
-  height: 1.35rem;
-  min-height: 1.35rem;
-  max-height: 1.35rem;
+main div.app .dataField #field1 .feel {
+  margin: 0.35rem;
+}
+main div.app .dataField #field1 .feel textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid grey;
+  text-decoration: 1px underline grey;
+  height: 1.15rem;
+  min-height: 1.15rem;
+  max-height: 1.15rem;
   width: 13rem;
   min-width: 13rem;
   max-width: 13rem;
-  border: 2px solid skyblue;
 }
-main div.dataField #field2 button {
+main div.app .dataField #field2 button {
   font-size: 0.95rem;
   width: 12rem;
   color: white;
   background-color: rgb(90, 181, 218);
-  border: 1.5px solid rgb(90, 181, 218);
+  border: 2px solid rgb(90, 181, 218);
   font-weight: bold;
   padding: 0.6rem;
   border-radius: 1.5rem;
-  margin: 1.2rem 0 0.5rem 0;
+  margin: 0.35rem 0 0.35rem 0;
 }
-main div.dataField #field2 button:hover {
+main div.app .dataField #field2 button:hover {
   cursor: pointer;
   color: rgb(90, 181, 218);
   background-color: white;
-  border: 1.5px solid rgb(90, 181, 218);
 }
-main div.dataField #field2 #bar {
-  width: 80%;
-  height: 1rem;
-  border: 2px solid steelblue;
-  border-radius: 1rem;
-  transition: opacity 0.5s ease-in-out;
+main div.app .display div.section div {
+  margin: 1.3rem 0.55rem;
 }
-main div.dataField #field2 #bar #progress {
+main div.app .display div.section div i {
+  font-size: 1.1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 4rem;
+}
+main div.app .display div.section div i.fa-location-dot {
+  color: rgb(177, 129, 7);
+  background-color: rgba(184, 148, 57, 0.719);
+}
+main div.app .display div.section div i.fa-temperature-half {
+  color: darkred;
+  background-color: rgba(177, 70, 70, 0.603);
+}
+main div.app .display div.section div i.fa-wind {
+  color: rgb(1, 124, 124);
+  background-color: rgba(68, 172, 172, 0.603);
+}
+main div.app .display div.section div i.fa-droplet {
+  color: darkblue;
+  background-color: rgba(57, 57, 161, 0.603);
+}
+main div.app .display div.section div i.fa-user {
+  color: darkgreen;
+  background-color: rgba(57, 160, 57, 0.603);
+}
+main div.app .display div.section div .value {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: rgba(15, 87, 146, 0.925);
+  text-align: center;
   margin: 0;
-  padding: 0;
-  background-color: skyblue;
-  border-radius: 1rem;
-  width: 100%;
-  height: 100%;
-  max-width: 0%;
-  transition: max-width 4s ease-in-out;
+  transition: opacity 2.5s ease-in-out;
 }
-main div.dataField #field2 #bar #progress.full {
-  max-width: 100%;
-}
-main div.dataField #field2 #bar.hide {
+main div.app .display div.section div .value.hide {
   opacity: 0;
 }
-main div.dataField #field2 #bar.show {
-  opacity: 1;
-}
-main div.display {
-  width: 100%;
-}
-main div.display div.section {
-  width: 100%;
-  margin: 0;
-}
-main div.display div.section i {
-  font-size: 2.7rem;
-  color: rgba(170, 229, 252, 0.808);
-  margin-right: 0.75rem;
-}
-main div.display div.section i.fa-style {
-  --fa-beat-fade-opacity: 0.1;
-  --fa-beat-fade-scale: 1.25;
-}
-main div.display div.section .value {
-  margin: 0;
-  color: rgb(15, 87, 146);
-  text-align: center;
-}
-main div.display div.section .title {
-  margin-top: 0;
-  text-decoration: underline;
+main div.app .display div.section div .title {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(15, 87, 146, 0.925);
   font-weight: bold;
-  color: rgb(15, 87, 146);
+  color: rgba(15, 87, 146, 0.925);
   text-align: center;
 }
-main div.display div.section div {
-  margin: 0.5rem 0.6rem;
-}
-main div.display #header {
-  font-family: 'Lobster Two', cursive;
+main div.app .display #header {
+  font-family: "Lobster Two", cursive;
   font-weight: bold;
   font-size: 1.4rem;
   color: rgba(15, 87, 146, 0.925);
 }
+@media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
+  main div.D-T-L {
+    background: no-repeat center/100% url("../assets/pexels-pixabay-258136.jpg");
+  }
+}
 @media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
   main {
     /* Tall Mobile Screens ($mn-hgt, $mx-wdth) */
-    min-height: 40vh;
+    min-height: 50vh;
   }
 }
 @media only screen and (min-height: 37.5em) and (max-width: 20.625em) {
   main {
     /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
   }
-  main div.display div.section i {
-    margin-right: 1.3rem;
+  main div.D-T-L {
+    background: no-repeat center/330% url("../assets/pexels-pixabay-258136.jpg");
+  }
+  main div.D-T-L div.D-T {
+    margin: 0 0 0 0.85rem;
+  }
+  main div.D-T-L div.D-T p#time {
+    font-size: 1.35rem;
+  }
+  main div.D-T-L div.D-T p#date {
+    font-size: 0.85rem;
+  }
+  main div.D-T-L div.loc p {
+    margin: 0 0.85rem 0 0;
+  }
+  main div.D-T-L div.loc p#cityLoc {
+    font-size: 1.35rem;
+  }
+  main div.D-T-L div.loc p#country {
+    font-size: 0.85rem;
   }
 }
 @media only screen and (min-height: 60em) and (max-height: 87em) and (min-width: 45em) and (max-width: 64em) {
   main {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    font-size: 1.3rem;
-    min-height: 45vh;
   }
-  main div.dataField {
-    width: 90%;
+  main div.D-T-L {
+    padding-bottom: 40vh;
+    background: no-repeat center/150% url("../assets/pexels-pixabay-258136.jpg");
   }
-  main div.dataField button {
-    font-size: 1.1rem;
+  main div.app {
+    margin: 2rem 0;
+    min-height: 40vh;
   }
-  main div.dataField .zipSection input {
-    padding: 0.45rem;
-    font-size: 1.1rem;
-    width: 10rem;
-  }
-  main div.dataField .country select {
-    padding: 0.45rem;
-    font-size: 1.1rem;
-  }
-  main div.dataField .feel textarea {
-    padding: 0.45rem;
-    font-size: 1.1rem;
-  }
-  main div.display {
-    font-size: 1.2rem;
-  }
-  main div.display div.limitWidth {
-    width: 95%;
+  main div.app .display div.section div {
+    margin: 1.3rem 0.8rem;
   }
 }
-@media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 48em) {
+@media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 44em) {
   main {
-    /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    font-size: 1.3rem;
-    min-height: 55vh;
+    /* ALL flipped pads ($mn-wdth, $max-wdth, $mn-hgt) */
   }
-  main div.dataField {
-    width: 90%;
+  main div.D-T-L {
+    padding-bottom: 40vh;
+    background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
   }
-  main div.dataField button {
-    font-size: 1.1rem;
+  main div.app {
+    margin: 0;
+    min-height: 40vh;
   }
-  main div.dataField .zipSection input {
-    padding: 0.45rem;
-    font-size: 1.1rem;
-    width: 10rem;
-  }
-  main div.dataField .country select {
-    padding: 0.45rem;
-    font-size: 1.1rem;
-  }
-  main div.dataField .feel textarea {
-    padding: 0.45rem;
-    font-size: 1.1rem;
-  }
-  main div.display {
-    font-size: 1.2rem;
-  }
-  main div.display div.limitWidth {
-    width: 95%;
+  main div.app .display div.section div {
+    margin: 1.3rem 1rem;
   }
 }
 @media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
   main {
     /* ($mx-hgt, $mn-wdth) */
   }
-  main div.dataField .feel textarea {
-    width: 15rem;
+  main div.D-T-L {
+    padding-bottom: 40vh;
+    background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
   }
-  main div.display div.section i {
-    font-size: 3rem;
-    margin-right: 1rem;
-  }
-  main div.display div.section .value {
+  main div.app {
     margin: 0;
+    min-height: 40vh;
   }
-  main div.display div.section .title {
-    margin-top: 0;
+  main div.app .display div.section div {
+    margin: 1.3rem 1.3rem;
   }
 }
 
 footer {
   color: white;
   padding: 1rem;
-  border-radius: 5rem 0 0 0;
-  background: linear-gradient(100deg, rgb(8, 178, 245), rgb(3, 47, 143));
+  border-radius: 0 5rem 0 0;
+  background: linear-gradient(100deg, rgb(12, 202, 177), rgba(84, 81, 230, 0.699));
   /* Media Queries */
 }
 footer div {
@@ -486,7 +400,8 @@ footer div i.fa-style {
   --fa-beat-fade-scale: 1.25;
 }
 footer div#author p {
-  font-family: 'Lobster Two', cursive;
+  color: white;
+  font-family: "Lobster Two", cursive;
   font-size: 1.2rem;
   width: 100%;
 }
@@ -524,38 +439,39 @@ footer div#author p#name {
 @media only screen and (min-height: 60em) and (max-height: 87em) and (min-width: 45em) and (max-width: 64em) {
   footer {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    min-height: 18vh;
-  }
-  footer p {
-    font-size: 2rem;
+    min-height: 15vh;
   }
   footer div {
     max-width: 55%;
+  }
+  footer div#author p {
+    font-size: 1.5rem;
   }
 }
 @media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 48em) {
   footer {
     /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    min-height: 30vh;
-  }
-  footer p {
-    font-size: 2rem;
+    max-height: 20vh;
   }
   footer div {
     max-width: 40%;
+  }
+  footer div#author p {
+    font-size: 1.5rem;
   }
 }
 @media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
   footer {
     /* ($mx-hgt, $mn-wdth) */
-  }
-  footer p {
-    font-size: 1.5rem;
+    min-height: 20vh;
   }
   footer div {
     width: 35%;
   }
   footer div i {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+  footer div#author p {
+    font-size: 1.1rem;
   }
 }
