@@ -6,153 +6,188 @@
 
 main {
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  background-color: v.$pg-bckgrnd-clr;
-  padding: 0.5rem;
+  font-size: v.$pg-font-size;
   min-height: 50vh;
   div {
     margin: 0.7rem 0;
-    &.dataField {
-      background-color: rgba(207, 212, 214, 0.5);
-      border-radius: 2rem;
-      width: 90%;
-      #field1 {
-        label {
-          font-size: 1.1rem;
-          font-weight: bold;
-          text-align: center;
-          margin-bottom: 0.6rem;
-          color: rgb(15, 87, 146);
-        }
-        .country {
-          select {
-            @include m.inputArea(0.25rem, 0.7rem, none);
-            padding: 0.5rem;
-            border: 2px solid v.$border-clr;
-          }
-        }
-        .zipSection {
-          input {
-            @include m.inputArea(0.25rem, 0.7rem, none);
-            width: 7.5rem;
-            padding: 0.5rem;
-            border: 2px solid v.$border-clr;
-          }
-        }
-        .feel {
-          textarea {
-            @include m.inputArea(0.25rem, 0.7rem, none);
-            padding: 0.35rem;
-            height: 1.35rem;
-            min-height: 1.35rem;
-            max-height: 1.35rem;
-            width: 13rem;
-            min-width: 13rem;
-            max-width: 13rem;
-            border: 2px solid v.$border-clr;
-          }
-        }
-      }
-      #field2 {
-        button {
-          font-size: 0.95rem;
-          width: 12rem;
-          color: v.$button-txt-clr;
-          background-color: v.$button-clr;
-          border: 1.5px solid v.$button-clr;
-          font-weight: bold;
-          padding: 0.6rem;
-          border-radius: 1.5rem;
-          margin: 1.2rem 0 0.5rem 0;
-          &:hover {
-            cursor: pointer;
-            color: v.$button-clr;
-            background-color: v.$button-txt-clr;
-            border: 1.5px solid v.$button-clr;
-          }
-        }
-        #bar {
-          width: 80%;
-          height: 1rem;
-          border: 2px solid v.$bar-brdr-clr;
-          border-radius: 1rem;
-          transition: opacity 0.5s ease-in-out;
-          #progress {
-            margin: 0;
-            padding: 0;
-            background-color: v.$border-clr;
-            border-radius: 1rem;
-            width: 100%;
-            height: 100%;
-            max-width: 0%;
-            transition: max-width 4s ease-in-out;
-            &.full {
-              max-width: 100%;
+    &.D-T-L {
+      margin: 0;
+      padding-bottom: 65vh;
+      background: no-repeat center/290% url("../assets/pexels-pixabay-258136.jpg");
+      border-radius: 0 0 0 5rem;
+      div {
+        &.D-T {
+          p {
+            margin: 0 0 0 1.5rem;
+            &#time {
+              font-size: v.$pg-font-size + 0.8rem;
             }
-          }
-          &.hide {
-            opacity: 0;
-          }
-          &.show {
-            opacity: 1;
+            &#date {
+              font-size: v.$pg-font-size;
+            }
           }
         }
       }
     }
-    &.display {
+    &.app {
       width: 100%;
-      div {
-        &.section {
-          width: 100%;
-          margin: 0;
-          i {
-            font-size: 2.7rem;
-            color: rgba(170, 229, 252, 0.808);
-            margin-right: 0.75rem;
-            &.fa-style {
-              --fa-beat-fade-opacity: 0.1;
-              --fa-beat-fade-scale: 1.25;
+      background-color: v.$pg-bckgrnd-clr;
+      margin: 0;
+      .dataField {
+        #field1 {
+          label {
+            font-size: v.$pg-font-size + 0.1rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            color: v.$pg-title-clr;
+          }
+          .country {
+            margin: 0.35rem;
+            select {
+              @include m.inputArea(0.5rem, 0.5rem, 2px solid grey);
             }
           }
-          .value {
-            margin: 0;
-            color: v.$pg-title-clr;
-            text-align: center;
+          .zipSection {
+            margin: 0.35rem;
+            input {
+              @include m.inputArea(0.5rem, 0.5rem, 2px solid grey);
+              width: 7.5rem;
+              text-decoration: 1px underline grey;
+            }
           }
-          .title {
-            margin-top: 0;
-            text-decoration: underline;
+          .feel {
+            margin: 0.35rem;
+            textarea {
+              @include m.inputArea(0.5rem, 0.5rem, 2px solid grey);
+              text-decoration: 1px underline grey;
+              height: 1.15rem;
+              min-height: 1.15rem;
+              max-height: 1.15rem;
+              width: 13rem;
+              min-width: 13rem;
+              max-width: 13rem;
+            }
+          }
+        }
+        #field2 {
+          button {
+            font-size: v.$pg-font-size - 0.05rem;
+            width: 12rem;
+            color: v.$button-txt-clr;
+            background-color: v.$button-clr;
+            border: 2px solid v.$button-clr;
             font-weight: bold;
-            color: v.$pg-title-clr;
-            text-align: center;
-          }
-          div {
-            margin: 0.5rem 0.6rem;
+            padding: 0.6rem;
+            border-radius: 1.5rem;
+            margin: 0.35rem 0 0.35rem 0;
+            &:hover {
+              cursor: pointer;
+              color: v.$button-clr;
+              background-color: v.$button-txt-clr;
+            }
           }
         }
       }
-      #header {
-        font-family: 'Lobster Two', cursive;
-        font-weight: bold;
-        font-size: 1.4rem;
-        color: rgba(15, 87, 146, 0.925);
+      .display {
+        div {
+          &.section {
+            div {
+              margin: 1.3rem 0.55rem;
+              i {
+                font-size: v.$pg-font-size + 0.1rem;
+                padding: 1rem 1.2rem;
+                border-radius: 4rem;
+                &.fa-location-dot {
+                  color: v.$loc-icon-clr;
+                  background-color: v.$loc-icon-bckgrnd;
+                }
+                &.fa-temperature-half {
+                  color: v.$temp-icon-clr;
+                  background-color: v.$temp-icon-bckgrnd;
+                }
+                &.fa-wind {
+                  color: v.$wind-icon-clr;
+                  background-color: v.$wind-icon-bckgrnd;
+                }
+                &.fa-droplet {
+                  color: v.$droplet-icon-clr;
+                  background-color: v.$droplet-icon-bckgrnd;
+                }
+                &.fa-user {
+                  color: v.$user-icon-clr;
+                  background-color: v.$user-icon-bckgrnd;
+                }
+              }
+              .value {
+                font-size: v.$pg-font-size - 0.05rem;
+                font-weight: bold;
+                color: v.$pg-title-opac-clr;
+                text-align: center;
+                margin: 0;
+                transition: opacity 2.5s ease-in-out;
+                &.hide {
+                  opacity: 0;
+                }
+              }
+              .title {
+                padding-bottom: 0.75rem;
+                border-bottom: 1px solid v.$pg-title-opac-clr;
+                font-weight: bold;
+                color: v.$pg-title-opac-clr;
+                text-align: center;
+              }
+            }
+          }
+        }
+        #header {
+          font-family: 'Lobster Two', cursive;
+          font-weight: bold;
+          font-size: v.$pg-font-size + 0.4rem;
+          color: v.$pg-title-opac-clr;
+        }
       }
     }
   }
 
   /* Media Queries */
+  @include m.flippedMobileScreens(31.25em, 28.125em) {
+    div {
+      &.D-T-L {
+        background: no-repeat center/100% url("../assets/pexels-pixabay-258136.jpg");
+      }
+    }
+  }
   @include m.tallMobileScreens(47.8em, 31.25em) {
     /* Tall Mobile Screens ($mn-hgt, $mx-wdth) */
-    min-height: 40vh;
+    min-height: 50vh;
   }
   @include m.tallMobileScreens(37.5em, 20.625em) {
     /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
     div {
-      &.display {
+      &.D-T-L {
+        background: no-repeat center/330% url("../assets/pexels-pixabay-258136.jpg");
         div {
-          &.section {
-            i {
-              margin-right: 1.3rem;
+          &.D-T {
+            margin: 0 0 0 0.85rem;
+            p {
+              &#time {
+                font-size: v.$pg-font-size + 0.35rem;
+              }
+              &#date {
+                font-size: v.$pg-font-size - 0.15rem;
+              }
+            }
+          }
+          &.loc {
+            p {
+              margin: 0 0.85rem 0 0;
+              &#cityLoc {
+                font-size: v.$pg-font-size + 0.35rem;
+              }
+              &#country {
+                font-size: v.$pg-font-size - 0.15rem;
+              }
             }
           }
         }
@@ -161,61 +196,68 @@ main {
   }
   @include m.padScreens(60em, 87em, 45em, 64em) {
     /* ALL pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    @include m.padStyles(
-      1.3rem,
-      45vh,
-      90%,
-      10rem,
-      0.45rem,
-      1.1rem,
-      50vw,
-      34rem,
-      4.5rem,
-      34rem
-    );
-  }
-  @include m.flippedPadScreens(64em, 87em, 48em) {
-    /* ALL flipped pads ($mn-hgt, $mx-hgt, $mn-wdth, $mx-wdth) */
-    @include m.padStyles(
-      1.3rem,
-      55vh,
-      90%,
-      10rem,
-      0.45rem,
-      1.1rem,
-      40vw,
-      34rem,
-      4.5rem,
-      34rem
-    );
-  }
-  @include m.laptopScreens(40.75em, 59.375em) {
-    /* ($mx-hgt, $mn-wdth) */
     div {
-      &.dataField {
-        .feel {
-          textarea {
-            width: 15rem;
-          }
-        }
+      &.D-T-L {
+        padding-bottom: 40vh;
+        background: no-repeat center/150% url("../assets/pexels-pixabay-258136.jpg");
       }
-      &.display {
-        //@include m.displayStyle(30vw, 34rem, 4.5rem, 34rem);
-        div {
-          &.section {
-            i {
-              font-size: 3rem;
-              margin-right: 1rem;
-            }
-            .value {
-              margin: 0;
-            }
-            .title {
-              margin-top: 0;
+      &.app {
+        margin: 2rem 0;
+        min-height: 40vh;
+        .display {
+          div {
+            &.section {
+              div {
+                margin: 1.3rem 0.8rem;
+              }
             }
           }
         }
       }
     }
   }
+  @include m.flippedPadScreens(64em, 87em, 44em) {
+    /* ALL flipped pads ($mn-wdth, $max-wdth, $mn-hgt) */
+    div {
+      &.D-T-L {
+        padding-bottom: 40vh;
+        background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
+      }
+      &.app {
+        margin: 0;
+        min-height: 40vh;
+        .display {
+          div {
+            &.section {
+              div {
+                margin: 1.3rem 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include m.laptopScreens(40.75em, 59.375em) {
+    /* ($mx-hgt, $mn-wdth) */
+    div {
+      &.D-T-L {
+        padding-bottom: 40vh;
+        background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
+      }
+      &.app {
+        margin: 0;
+        min-height: 40vh;
+        .display {
+          div {
+            &.section {
+              div {
+                margin: 1.3rem 1.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
 }
