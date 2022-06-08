@@ -3,7 +3,6 @@
   grid-template-rows: repeat($numOfRows, auto);
   grid-template-columns: $numOfColumns;
   grid-area: $area;
-  gap: 1.5rem;
 }
 
 @mixin displayFlex($flex-direc, $wrap, $justify, $align) {
@@ -17,57 +16,6 @@
   padding: $padding;
   border-radius: $border-radius;
   border: $border-type;
-}
-
-@mixin padStyles(
-  $fnt,
-  $min-hght,
-  $dtFld-wdth,
-  $in-wdth,
-  $fld-pad,
-  $fld-fnt,
-  $ds-w,
-  $ds-h,
-  $ds-mx-h,
-  $ext-mx-w
-) {
-  font-size: $fnt;
-  min-height: $min-hght;
-  div {
-    &.dataField {
-      width: $dtFld-wdth;
-      button {
-        font-size: $fld-fnt;
-      }
-      .zipSection {
-        input {
-          padding: $fld-pad;
-          font-size: $fld-fnt;
-          width: $in-wdth;
-        }
-      }
-      .country {
-        select {
-          padding: $fld-pad;
-          font-size: $fld-fnt;
-        }
-      }
-      .feel {
-        textarea {
-          padding: $fld-pad;
-          font-size: $fld-fnt;
-        }
-      }
-    }
-    &.display {
-      font-size: $fld-fnt + 0.1rem;
-      div {
-        &.limitWidth {
-          width: $dtFld-wdth + 5%;
-        }
-      }
-    }
-  }
 }
 
 /* Media Queries */
