@@ -43,8 +43,8 @@
   }
 }
 
-@mixin laptopScreens($mx-hgt, $mn-wdth) {
-  @media only screen and (max-height: $mx-hgt) and (min-width: $mn-wdth) {
+@mixin laptopScreens($mn-hgt, $mn-wdth) {
+  @media only screen and (min-height: $mn-hgt) and (min-width: $mn-wdth) {
     @content;
   }
 }
