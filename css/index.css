@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
 /* Media Queries */
 /* header variables */
 /* page variables */
@@ -11,7 +11,7 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: 1fr;
-  grid-area: 'hdr' 'mn' 'ftr';
+  grid-area: "hdr" "mn" "ftr";
 }
 body header {
   display: flex;
@@ -112,17 +112,13 @@ body footer div#author {
 
 header {
   height: 3.5rem;
-  background: linear-gradient(
-    100deg,
-    rgb(12, 202, 202),
-    rgba(75, 214, 207, 0.699)
-  );
+  background: linear-gradient(100deg, rgb(12, 202, 202), rgba(75, 214, 207, 0.699));
   /* Media Queries */
 }
 header h1 {
   margin: 0.5rem 0;
   color: white;
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   font-size: 1.8rem;
   padding-left: 1.2rem;
 }
@@ -150,7 +146,7 @@ header h1 {
     font-size: 2.2rem;
   }
 }
-@media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+@media only screen and (min-height: 40.75em) and (min-width: 59.375em) {
   header {
     /* Laptop Screens ($mx-hgt, $mn-wdth) */
     height: 4.5rem;
@@ -161,7 +157,7 @@ header h1 {
 }
 
 main {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   min-height: 50vh;
   /* Media Queries */
@@ -172,7 +168,7 @@ main div {
 main div.D-T-L {
   margin: 0;
   padding-bottom: 65vh;
-  background: no-repeat center/290% url('../assets/pexels-pixabay-258136.jpg');
+  background: no-repeat center/290% url("../assets/pexels-pixabay-258136.jpg");
   border-radius: 0 0 0 5rem;
 }
 main div.D-T-L div.D-T p {
@@ -203,6 +199,7 @@ main div.app .dataField #field1 .country select {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 2px solid grey;
+  height: 2.3rem;
 }
 main div.app .dataField #field1 .zipSection {
   margin: 0.35rem;
@@ -211,6 +208,7 @@ main div.app .dataField #field1 .zipSection input {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 2px solid grey;
+  height: 1.15rem;
   width: 7.5rem;
   text-decoration: 1px underline grey;
 }
@@ -292,14 +290,14 @@ main div.app .display div.section div .title {
   text-align: center;
 }
 main div.app .display #header {
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   font-weight: bold;
   font-size: 1.4rem;
   color: rgba(15, 87, 146, 0.925);
 }
 @media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
   main div.D-T-L {
-    background: no-repeat center/100% url('../assets/pexels-pixabay-258136.jpg');
+    background: no-repeat center/100% url("../assets/pexels-pixabay-258136.jpg");
   }
 }
 @media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
@@ -313,7 +311,7 @@ main div.app .display #header {
     /* Foldable Narrow Device ($mn-hgt, $mx-wdth) */
   }
   main div.D-T-L {
-    background: no-repeat center/330% url('../assets/pexels-pixabay-258136.jpg');
+    background: no-repeat center/330% url("../assets/pexels-pixabay-258136.jpg");
   }
   main div.D-T-L div.D-T {
     margin: 0 0 0 0.85rem;
@@ -340,7 +338,7 @@ main div.app .display #header {
   }
   main div.D-T-L {
     padding-bottom: 40vh;
-    background: no-repeat center/150% url('../assets/pexels-pixabay-258136.jpg');
+    background: no-repeat center/150% url("../assets/pexels-pixabay-258136.jpg");
   }
   main div.app {
     margin: 2rem 0;
@@ -350,13 +348,13 @@ main div.app .display #header {
     margin: 1.3rem 0.8rem;
   }
 }
-@media only screen and (min-width: 64em) and (max-width: 87em) and (min-height: 44em) {
+@media only screen and (min-width: 64em) and (max-width: 75em) and (min-height: 44em) {
   main {
     /* ALL flipped pads ($mn-wdth, $max-wdth, $mn-hgt) */
   }
   main div.D-T-L {
     padding-bottom: 40vh;
-    background: no-repeat top/100% url('../assets/pexels-pixabay-258136.jpg');
+    background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
   }
   main div.app {
     margin: 0;
@@ -366,13 +364,13 @@ main div.app .display #header {
     margin: 1.3rem 1rem;
   }
 }
-@media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+@media only screen and (min-height: 40.75em) and (min-width: 59.375em) {
   main {
-    /* ($mx-hgt, $mn-wdth) */
+    /* ($mn-hgt, $mn-wdth) */
   }
   main div.D-T-L {
     padding-bottom: 40vh;
-    background: no-repeat top/100% url('../assets/pexels-pixabay-258136.jpg');
+    background: no-repeat top/100% url("../assets/pexels-pixabay-258136.jpg");
   }
   main div.app {
     margin: 0;
@@ -387,11 +385,7 @@ footer {
   color: white;
   padding: 1rem;
   border-radius: 0 5rem 0 0;
-  background: linear-gradient(
-    100deg,
-    rgb(12, 202, 177),
-    rgba(84, 81, 230, 0.699)
-  );
+  background: linear-gradient(100deg, rgb(12, 202, 177), rgba(84, 81, 230, 0.699));
   /* Media Queries */
 }
 footer div {
@@ -409,7 +403,7 @@ footer div i.fa-style {
 }
 footer div#author p {
   color: white;
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   font-size: 1.2rem;
   width: 100%;
 }
@@ -468,7 +462,7 @@ footer div#author p#name {
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-height: 40.75em) and (min-width: 59.375em) {
+@media only screen and (min-height: 40.75em) and (min-width: 59.375em) {
   footer {
     /* ($mx-hgt, $mn-wdth) */
     min-height: 20vh;
