@@ -47,12 +47,14 @@ main {
             margin: 0.35rem;
             select {
               @include m.inputArea(0.5rem, 0.5rem, 2px solid grey);
+              height: 2.3rem;
             }
           }
           .zipSection {
             margin: 0.35rem;
             input {
               @include m.inputArea(0.5rem, 0.5rem, 2px solid grey);
+              height: 1.15rem;
               width: 7.5rem;
               text-decoration: 1px underline grey;
             }
@@ -220,7 +222,7 @@ main {
       }
     }
   }
-  @include m.flippedPadScreens(64em, 87em, 44em) {
+  @include m.flippedPadScreens(64em, 75em, 44em) {
     /* ALL flipped pads ($mn-wdth, $max-wdth, $mn-hgt) */
     div {
       &.D-T-L {
@@ -244,7 +246,7 @@ main {
     }
   }
   @include m.laptopScreens(40.75em, 59.375em) {
-    /* ($mx-hgt, $mn-wdth) */
+    /* ($mn-hgt, $mn-wdth) */
     div {
       &.D-T-L {
         padding-bottom: 40vh;
