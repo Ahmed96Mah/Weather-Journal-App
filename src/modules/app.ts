@@ -17,10 +17,7 @@ const postData = async (url: string = '', data: object = {}): Promise<void> => {
   });
 
   try {
-    const savedData = await response.json();
-    if (savedData !== {}) {
-      console.log(savedData);
-    }
+    await response.json();
   } catch (err) {
     throw new Error(`Error: ${err}`);
   }
@@ -71,23 +68,21 @@ const init = (): void => {
     const country = `,${userSelec}`;
     // make sure that the user has already entered the country & zipcode selections, then proceed.
     if (zipCode !== '' && country !== ',') {
-      getApiData(baseURL, zipCode, country, apiKey)
-        .then((data: object) => {
-          postData('/savedata', {
-            //@ts-ignore
-            temp: data['main'].temp,
-            feel: userFeel, //@ts-ignore
-            loc: data['name'], //@ts-ignore
-            humid: data['main'].humidity, //@ts-ignore
-            wind: data['wind'].speed,
-          });
-        })
-        .then(() => {
+      getApiData(baseURL, zipCode, country, apiKey).then((data: object) => {
+        postData('/weather/add', {
+          //@ts-ignore
+          temp: data['main'].temp,
+          feel: userFeel, //@ts-ignore
+          loc: data['name'], //@ts-ignore
+          humid: data['main'].humidity, //@ts-ignore
+          wind: data['wind'].speed,
+        }).then(() => {
           /* There isn't an instance of 'data' here because 'getAndUpdate()' doesen't need it, as it already has a
            *  defined GET route declared inside of it that retreive the data object from the server.
            */
           getAndUpdate();
         });
+      });
     } else {
       alert('Please make sure to select a country & Enter a zipcode!');
     }
