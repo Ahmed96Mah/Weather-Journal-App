@@ -3,12 +3,11 @@ export const getAndUpdate = async (): Promise<void> => {
   const valueSecs = document
     .querySelector('.section')!
     .querySelectorAll('.value');
-  const request = await fetch('/getdata');
+  const request = await fetch('/dashboard/latest');
   try {
     const retreivedData = await request.json();
 
     for (const sec of valueSecs) {
-      console.log('next');
       switch (sec.id) {
         case 'cityLoc':
           if (sec.textContent === '') {
