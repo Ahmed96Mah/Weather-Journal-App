@@ -43,6 +43,21 @@ body {
           @include m.displayFlex(column, nowrap, center, center);
         }
       }
+      .list {
+        @include m.displayFlex(column, nowrap, center, stretch);
+        #listDash {
+          @include m.displayFlex(row, wrap, space-around, center);
+        }
+        #history {
+          @include m.displayFlex(column, nowrap, center, center);
+          .instance {
+            @include m.displayFlex(row, wrap, space-between, center);
+            div {
+              @include m.displayFlex(column, nowrap, center, center);
+            }
+          }
+        }
+      }
     }
   }
   footer {
