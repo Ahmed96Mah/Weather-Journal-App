@@ -91,6 +91,36 @@ body main .app .dataField #field2 {
   justify-content: center;
   align-items: center;
 }
+body main .app .list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+body main .app .list #listDash {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body main .app .list #history {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main .app .list #history .instance {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .app .list #history .instance div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 body footer {
   display: flex;
   flex-flow: row wrap;
@@ -299,9 +329,95 @@ main div.app .display #header {
   font-size: 1.4rem;
   color: rgba(15, 87, 146, 0.925);
 }
+main div.app .list {
+  margin-top: 3rem;
+  width: 100%;
+}
+main div.app .list div#listDash p {
+  font-family: 'Lobster Two', cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: rgba(15, 87, 146, 0.925);
+}
+main div.app .list div#listDash button {
+  font-size: 0.95rem;
+  width: 12rem;
+  color: white;
+  background-color: rgb(90, 181, 218);
+  border: 2px solid rgb(90, 181, 218);
+  font-weight: bold;
+  padding: 0.6rem;
+  border-radius: 1.5rem;
+  margin: 0.35rem 0 0.35rem 0;
+}
+main div.app .list div#listDash button:hover {
+  cursor: pointer;
+  color: rgb(90, 181, 218);
+  background-color: white;
+}
+main div.app .list div#history div.instance {
+  transition: opacity 2.5s ease-in-out;
+}
+main div.app .list div#history div.instance div {
+  margin: 1.3rem 0.55rem;
+}
+main div.app .list div#history div.instance div i {
+  font-size: 1.1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 4rem;
+}
+main div.app .list div#history div.instance div i.fa-location-dot {
+  color: rgb(177, 129, 7);
+  background-color: rgba(184, 148, 57, 0.719);
+}
+main div.app .list div#history div.instance div i.fa-temperature-half {
+  color: darkred;
+  background-color: rgba(177, 70, 70, 0.603);
+}
+main div.app .list div#history div.instance div i.fa-wind {
+  color: rgb(1, 124, 124);
+  background-color: rgba(68, 172, 172, 0.603);
+}
+main div.app .list div#history div.instance div i.fa-droplet {
+  color: darkblue;
+  background-color: rgba(57, 57, 161, 0.603);
+}
+main div.app .list div#history div.instance div i.fa-user {
+  color: darkgreen;
+  background-color: rgba(57, 160, 57, 0.603);
+}
+main div.app .list div#history div.instance div .value {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: rgba(15, 87, 146, 0.925);
+  text-align: center;
+  margin: 0;
+}
+main div.app .list div#history div.instance div .title {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(15, 87, 146, 0.925);
+  font-weight: bold;
+  color: rgba(15, 87, 146, 0.925);
+  text-align: center;
+}
+main div.app .list div#history div.instance.hide {
+  opacity: 0;
+}
+main div.app .list div#history .header {
+  font-family: 'Lobster Two', cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: rgba(15, 87, 146, 0.925);
+}
+main div.app .list div#history hr {
+  width: 90%;
+}
 @media only screen and (min-width: 31.25em) and (max-height: 28.125em) {
   main div.D-T-L {
     background: no-repeat center/100% url('../assets/pexels-pixabay-258136.jpg');
+  }
+  main div.app .list div#history hr {
+    width: 80%;
   }
 }
 @media only screen and (min-height: 47.8em) and (max-width: 31.25em) {
@@ -351,6 +467,9 @@ main div.app .display #header {
   main div.app .display div.section div {
     margin: 1.3rem 0.8rem;
   }
+  main div.app .list div#history hr {
+    width: 65%;
+  }
 }
 @media only screen and (min-width: 64em) and (max-width: 75em) and (min-height: 44em) {
   main {
@@ -367,6 +486,9 @@ main div.app .display #header {
   main div.app .display div.section div {
     margin: 1.3rem 1rem;
   }
+  main div.app .list div#history hr {
+    width: 60%;
+  }
 }
 @media only screen and (min-height: 40.75em) and (min-width: 59.375em) {
   main {
@@ -382,6 +504,12 @@ main div.app .display #header {
   }
   main div.app .display div.section div {
     margin: 1.3rem 1.3rem;
+  }
+  main div.app .list div#history div.instance div {
+    margin: 1.3rem 1.5rem;
+  }
+  main div.app .list div#history hr {
+    width: 50%;
   }
 }
 
