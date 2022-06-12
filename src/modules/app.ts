@@ -4,7 +4,7 @@ import { listHistory } from './list.js';
 
 /* API URL */
 export const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-export const apiKey = `&appid=dfb2b09b4a31fe4915e6e143a412bd3f&units=imperial`;
+export const apiKey = `&appid=<Your-API-Keys-Goes-Here>&units=imperial`;
 
 // Define the POST Async function
 const postData = async (url: string = '', data: object = {}): Promise<void> => {
