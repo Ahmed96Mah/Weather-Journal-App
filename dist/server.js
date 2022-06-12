@@ -21,5 +21,5 @@ dashboardRoutes(app);
 const port = 8000;
 // Then the server should start listening at the port defined, and send a staring confirmation message
 const server = app.listen(port, () => {
-    console.log(`Server is running @ port: ${port}`);
+  console.log(`Server is running @ port: ${port}`);
 });
