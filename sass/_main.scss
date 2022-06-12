@@ -150,6 +150,97 @@ main {
           color: v.$pg-title-opac-clr;
         }
       }
+      .list {
+        margin-top: 3rem;
+        width: 100%;
+        div {
+          &#listDash {
+            p {
+              font-family: 'Lobster Two', cursive;
+              font-weight: bold;
+              font-size: v.$pg-font-size + 0.4rem;
+              color: v.$pg-title-opac-clr;
+            }
+            button {
+              font-size: v.$pg-font-size - 0.05rem;
+              width: 12rem;
+              color: v.$button-txt-clr;
+              background-color: v.$button-clr;
+              border: 2px solid v.$button-clr;
+              font-weight: bold;
+              padding: 0.6rem;
+              border-radius: 1.5rem;
+              margin: 0.35rem 0 0.35rem 0;
+              &:hover {
+                cursor: pointer;
+                color: v.$button-clr;
+                background-color: v.$button-txt-clr;
+              }
+            }
+          }
+          &#history {
+            div {
+              &.instance {
+                transition: opacity 2.5s ease-in-out;
+                div {
+                  margin: 1.3rem 0.55rem;
+                  i {
+                    font-size: v.$pg-font-size + 0.1rem;
+                    padding: 1rem 1.2rem;
+                    border-radius: 4rem;
+                    &.fa-location-dot {
+                      color: v.$loc-icon-clr;
+                      background-color: v.$loc-icon-bckgrnd;
+                    }
+                    &.fa-temperature-half {
+                      color: v.$temp-icon-clr;
+                      background-color: v.$temp-icon-bckgrnd;
+                    }
+                    &.fa-wind {
+                      color: v.$wind-icon-clr;
+                      background-color: v.$wind-icon-bckgrnd;
+                    }
+                    &.fa-droplet {
+                      color: v.$droplet-icon-clr;
+                      background-color: v.$droplet-icon-bckgrnd;
+                    }
+                    &.fa-user {
+                      color: v.$user-icon-clr;
+                      background-color: v.$user-icon-bckgrnd;
+                    }
+                  }
+                  .value {
+                    font-size: v.$pg-font-size - 0.05rem;
+                    font-weight: bold;
+                    color: v.$pg-title-opac-clr;
+                    text-align: center;
+                    margin: 0;
+                  }
+                  .title {
+                    padding-bottom: 0.75rem;
+                    border-bottom: 1px solid v.$pg-title-opac-clr;
+                    font-weight: bold;
+                    color: v.$pg-title-opac-clr;
+                    text-align: center;
+                  }
+                }
+                &.hide {
+                  opacity: 0;
+                }
+              }
+            }
+            .header {
+              font-family: 'Lobster Two', cursive;
+              font-weight: bold;
+              font-size: v.$pg-font-size + 0.4rem;
+              color: v.$pg-title-opac-clr;
+            }
+            hr {
+              width: 90%;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -159,6 +250,17 @@ main {
       &.D-T-L {
         background: no-repeat center/100%
           url('../assets/pexels-pixabay-258136.jpg');
+      }
+      &.app {
+        .list {
+          div {
+            &#history {
+              hr {
+                width: 80%;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -219,6 +321,15 @@ main {
             }
           }
         }
+        .list {
+          div {
+            &#history {
+              hr {
+                width: 65%;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -242,6 +353,15 @@ main {
             }
           }
         }
+        .list {
+          div {
+            &#history {
+              hr {
+                width: 60%;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -261,6 +381,22 @@ main {
             &.section {
               div {
                 margin: 1.3rem 1.3rem;
+              }
+            }
+          }
+        }
+        .list {
+          div {
+            &#history {
+              div {
+                &.instance {
+                  div {
+                    margin: 1.3rem 1.5rem;
+                  }
+                }
+              }
+              hr {
+                width: 50%;
               }
             }
           }
