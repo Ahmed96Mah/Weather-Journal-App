@@ -1,9 +1,10 @@
 import { getApiData } from './call.js';
 import { getAndUpdate } from './update.js';
+import { listHistory } from './list.js';
 
 /* API URL */
 export const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-export const apiKey = `&appid=<Your-API-Key-Goes-Here>&units=imperial`;
+export const apiKey = `&appid=dfb2b09b4a31fe4915e6e143a412bd3f&units=imperial`;
 
 // Define the POST Async function
 const postData = async (url: string = '', data: object = {}): Promise<void> => {
@@ -88,8 +89,21 @@ const init = (): void => {
     }
   };
 
-  // Adding a click event listener for the button.
+  // Defining The listener Callback
+  const showHistory = async (): Promise<void> => {
+    listHistory().then(() => {
+      const instances = document.querySelectorAll('.instance');
+      for (const instance of instances) {
+        instance.classList.toggle('hide');
+      }
+    });
+  };
+
+  // Adding a click event listener for the generate button.
   document.getElementById('generate')!.addEventListener('click', processClick);
+
+  // Adding a click event listener for the get button.
+  document.getElementById('get')!.addEventListener('click', showHistory);
 
   // Adding Mouse-Related events for social icons
   const socialIcons = document.querySelectorAll('i.fa-brands');
