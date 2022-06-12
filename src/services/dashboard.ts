@@ -2,7 +2,6 @@ import Client from '../database.js';
 import { Weather } from '../models/weatherUnit.js';
 
 export class weatherDashboard {
-
   async lastReading(): Promise<Weather> {
     try {
       const conn = await Client.connect();
@@ -14,5 +13,4 @@ export class weatherDashboard {
       throw new Error(`Error, ${err}`);
     }
   }
-  
 }
